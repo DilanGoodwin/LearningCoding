@@ -6,7 +6,7 @@ As well as printing out sentances, Scala can also be used to print out character
 
 ### 1.1  
 Use the code below to create a program. What is the output?
-- <placeholder\>
+* <placeholder\>
 ```
 object PrintFavourites {
   def main(args: Array[String]): Unit = {
@@ -40,7 +40,7 @@ object OutputVariables {
 The variable `option1` is reused many times to change the displayed output. Variables can be used to store different pieces of information that can then be used later on throughout the program. Within the program above the variables is inititalised using the term `var`. The variable is also given a type that it is going to store, in the code above the variable type given is `String`.
 ### 2.2
 Update one of the variables within the program. Can you see a benefit to storing data within variables?
-- Storing data within variables is useful because it allows the program to remember certain pieces of information. A good example of what a variable can be used for is the storing of someones name, you do not want a fixed name within your program because there is no guarantee that the person using the program will have that name. Instead assigining the name to a variable allows only that single thing to be changed & have it chage throughout the entire program. 
+* Storing data within variables is useful because it allows the program to remember certain pieces of information. A good example of what a variable can be used for is the storing of someones name, you do not want a fixed name within your program because there is no guarantee that the person using the program will have that name. Instead assigining the name to a variable allows only that single thing to be changed & have it chage throughout the entire program. 
 
 ## 3. Escape Sequences & Variables
 ### 3.1 
@@ -82,10 +82,10 @@ a
 "a"
 ```
 Look at the different types of the values, are they what you expected?
-- There are different variable types that can be used to store variables within a program, this is because the program allocates set amount of bits/bytes per variable for the information the programmer is going to store in it. For example most numbers are stored as `Int` values however there is a maximum & minimum value that can be stored as an `Int` before you would need to change the variable type to something like a `Long`. 
+* There are different variable types that can be used to store variables within a program, this is because the program allocates set amount of bits/bytes per variable for the information the programmer is going to store in it. For example most numbers are stored as `Int` values however there is a maximum & minimum value that can be stored as an `Int` before you would need to change the variable type to something like a `Long`. 
 
 Why do some of the inputs fail?
-- Some of the inputs fail because the interpreter is expecting a given variable type but the user has entered a different variable type. The interpreter uses little hits to work out what the input should be stored as, a good example of this is when entering a string. Strings are surrounded by quotation marks `"`, this tells the interpreter to save the variable as a string.
+* Some of the inputs fail because the interpreter is expecting a given variable type but the user has entered a different variable type. The interpreter uses little hits to work out what the input should be stored as, a good example of this is when entering a string. Strings are surrounded by quotation marks `"`, this tells the interpreter to save the variable as a string.
 
 ## 5. Operators in the Interpreter
 Once again open a Scala interpreter within a terminal & enter the following values:
@@ -107,7 +107,7 @@ true + 5
 3 / 4.0
 ```
 Looks at the different variable types & the outputs from some of the values. Why do some of them fail?
-- Some of the inputs fail because they are type miss matches, this is when the variables are two different types that do not play nicely with each other. A good example of this would be `5 + 5` & `"true" + 5`. Using the example `5 + 5` both values would be stored as integer values by Scala & would be added together (as stated by the operator `+`) without issue. However in the example `"true" + 5` the value `"true"` is stored as a string where as `5` is stored as an integer preventing the two from being added together. 
+* Some of the inputs fail because they are type miss matches, this is when the variables are two different types that do not play nicely with each other. A good example of this would be `5 + 5` & `"true" + 5`. Using the example `5 + 5` both values would be stored as integer values by Scala & would be added together (as stated by the operator `+`) without issue. However in the example `"true" + 5` the value `"true"` is stored as a string where as `5` is stored as an integer preventing the two from being added together. 
 
 ## 6. Variables in the Interpreter
 Enter the following expressions into the Scala interpreter:
@@ -130,8 +130,8 @@ var x13: Long = 2147483648
 var x14: Long = 2147483648L
 ```
 Explain the errors observed from these inputs.
-- Errors seem to arrise when a variable is stated to be the wrong type. An example of this is defining an `Int` but the value entered (`5.0`) is a `Double`. 
-- One of the other errors that has arrised is when a value is entered that exceeds the predefined bounds of the variable type. An example of this is assigning the number `2147483648` to the type `Int`.
+* Errors seem to arrise when a variable is stated to be the wrong type. An example of this is defining an `Int` but the value entered (`5.0`) is a `Double`. 
+* One of the other errors that has arrised is when a value is entered that exceeds the predefined bounds of the variable type. An example of this is assigning the number `2147483648` to the type `Int`.
 
 ## 7. Other Variable Types in the Interpreter
 Open a new Scala interpreter & enter the following:
@@ -152,7 +152,7 @@ var def: String = 45
 var object: Int = 5
 ```
 Why did some of the inputs fail?
-- Some of the provided inputs failed because of the way the variables were defined. Some words with Scala are predefined/used & are not allowed to be used as variable names. For example you could not use `var` as a variable name because it has a predefined function within Scala. 
+* Some of the provided inputs failed because of the way the variables were defined. Some words with Scala are predefined/used & are not allowed to be used as variable names. For example you could not use `var` as a variable name because it has a predefined function within Scala. 
 
 ## 8. Variables in a Scala Program
 ### 8.1
@@ -200,15 +200,49 @@ object InXOutX {
 }
 ```
 Do you understand how the program works?
-- The program above asks the user to enter a integer value, this value is then stored within the variable `x`. This variable can then be used by the program to complete various functions.
+* The program above asks the user to enter a integer value, this value is then stored within the variable `x`. This variable can then be used by the program to complete various functions.
 
 ## 13. Multiple Input
 Create a Scala program called `InputXandY` which prompts the user to enter 2 integers. These integers should be stored as variables with suitable names. Calculate the sum & product of the 2 integers, displaying the results to the screen.
 
 ## 14. Input with Prompts
+### 14.1
+Create a Scala program using the code below:
+```
+import scala.io.StdIn._
+
+object InOutStrings {
+  def main(args: Array[String]): Unit = {
+    print("Enter your first name ")
+    var firstName: String = readLine()
+    
+    var lastName: String = readLine("Enter your last name ")
+    
+    println("Your name is " + firstName + " " + lastName)
+  }
+}
+```
+Explain how the two inputs are done differently.
+
+### 14.2 
+Update the program to accept a third variable called `title` & output it along with their name.
 
 ## 15. Identifying Syntax Errors
+Look at the program below:
+```
+object Buggy {
+  def main(args: Array[String]): Unit = {
+    var def: Char = "a"
+var FIVE: Int = 5.1
+    
+    println("The data is+" def + " and +"FIVE+"!"
+         }
+}
+```
+The output of the program above should be `The data is a and 5!`.<br/><br/>Can you see potential problems with the program? Fix the problems within the program to give the provided output.
 
 ## 16. Using Variables for Calculations
+Create a program called `CircleCalc` which calculates the circumference of circle. Program use 2 variables holding radius & π. Calculate the result & store within another variable. Print out the result in format: `A circle with diameter 25 has a circumference of 78.54`.
 
 ## 17. A Different Approach
+Create copy program from previous exercise named `CircleCalc2`. Modify the program so that it doesn't require third variable but provides same output. 
