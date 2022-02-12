@@ -100,6 +100,23 @@ Create a new Scala program called `IPlusJTimesK`, declare 3 integer variables `i
 
 ### 6.1
 Run the program with values `i`=2, `j`=3 & `k`=4. What answer is produced?
-* Answer produced by program is 
+* Answer produced by program is 14.
 
 ### 6.2
+Modify the program so the produced answer is 20.
+* Adding brackets into the program can change the produced output. 
+
+## 7. Calculations
+Final speed of car accelerating from initial speed for specified time given formula `finalSpeed = initial + acceleration * time`. Create Scala program that:
+* Declares 4 integer variables called `finalSpeed`, `initial`, `acceleration` & `time`.
+* Calculates & stores final speed according formula above.
+* Print out final speed.
+
+## 8. Using Parentheses
+Sum numbers from 1 to N given formula `sum = N*(N+1)/2`.<br/> Create Scala program called `SumToN` which:
+* Declares variables called `N` & `sum`
+* Calculates sum according formula above
+* Prints out result <br/>
+`Sum from 1 to 10 is 55`.
+
+## 9. Operators & Strings
