@@ -120,3 +120,88 @@ Sum numbers from 1 to N given formula `sum = N*(N+1)/2`.<br/> Create Scala progr
 `Sum from 1 to 10 is 55`.
 
 ## 9. Operators & Strings
+Copy the code below into a new Scala program:
+```
+object StringConcat {
+  def main(args: Array[String]): Unit = {
+    println("Is the value of 5+5 " + 5 + 5 + "?")
+    println("Or is it " + (5 + 5) + "?")
+    println("Or even " + "5" * 5 + "?")  
+  }
+}
+```
+Can you explain the output?
+* <placeholder>
+
+## 10. Further Exploring Variables & Operators in the Interpreter
+Open a Scala interpreter & enter the following commands:
+```
+var a, b, c: Int = 5
+var d: Double = 6.6
+d = 7.7
+d += 2
+print(d)
+b *= 5
+print(b)
+d + a
+var e: 8
+var f: 9.9
+var g: 3 * 4.4
+var h: 100000000L
+var i = 'a'
+var j: Boolean = a < e
+var k: Boolean = a == c
+var l = a >= c
+var m = a != c
+var n: Boolean = a > 4 && a >= 5
+var even: Int = 6
+even % 2 == 0
+true && true
+a == 5 && a == 6
+a == 5 || a == 6
+a > 1 || a == 0
+"message " * 3
+3 * "message"
+"message" / 3
+"message" - 3
+"message" % 3
+3 + "message"
+val Pi = 3.14
+Pi = 3.1416
+val constantValue: Int = 5
+constantValue = constantValue + 1
+constantValue /= 2
+```
+Look at the results, where they what you expected?
+
+## 11. Relational Operators
+Write a Scala program called `Relational` which:
+* Prompts user enter 2 integer values.
+* Prints out take showing results comparing 2 integer values.
+
+## 12. Logical Operators
+Create program called `LogicalOperators` which prompts user for two boolean values & ouputs result applying `AND` and `OR` operators
+<br/><br/>
+Extend the program so output shows truth table for `AND` and `OR` operators.
+
+## 13. A Longer Formula 
+Sum of square numbers from 1 to N is known by formula: `sumSq=N*(N+1)*(2*N+1)/6` <br/>
+Create a Scala program called `SumSqToN` which:
+* Declares integer values `N` & `sumSq`
+* Calculates sum first N squares in accordance formula
+* Prints out result
+
+## 14. Input & Calculation
+Sum cubes of numbers 1 to N given by formula: `sumcubes=(N*N)*((N+1)*(N+1))/4` <br/>
+Create a Scala program that:
+* Declares integer values `n` & `sumcubes`
+* Prompts user enter value `n` from keyboard
+* Calculates sum first `n` cubes accordance formula 
+* Prints out formula
+
+## 15. Caesar
+Ceasar cipher mechanism encrypting text, encrypts message shifting alphabetic character in text fixed amount. Write a Scala program which:
+* Declares `Char` variable store character encrypted
+* Declares `Int` variable store amount shifted
+* Assigns variables by reading from keyboard , lowercase value for `Char` & integer for shift amount
+* Prints out original character & shifted value
