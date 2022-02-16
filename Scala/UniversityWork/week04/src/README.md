@@ -202,3 +202,4 @@ Create a program called `Initials` which outputs the initials of a name stored w
 Extend the program to construct & ouput an email address for the provided user. The email should be in the form `firstInitial.surname@email.university.ac.uk`.
 
 ## 11. Shifting Letters in a String
+Create a copy of the Caesar Cipher program from last week. Using that code create a program called `LetterCaesar` which asks the user to enter a sentence followed by the letter they wished to shift & the shift value. <br/> Program should then apply the shift to each of the selected characters.
