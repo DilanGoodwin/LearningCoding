@@ -80,20 +80,13 @@ object Signum {
 ```
 
 ### 3.2
-Make a copy of the program above called `Signum2` but rather than having each branch of the program print out output 
-have them add the output to a variable called `message`. Print the `message` variable at the end of the program using 
-`println`.
+Make a copy of the program above called `Signum2` but rather than having each branch of the program print out output have them add the output to a variable called `message`. Print the `message` variable at the end of the program using `println`.
 
 ## 4. Conditional Branching
-Create a new Scala program called `DigitsToWords`. Within the `main` method prompt the user to enter an integer value 
-within the range of 0-9. The program should then print out the written equivalent to that value eg: If the user enters 
-0 then the program will print out ZERO. If the value entered is outside the range of 0-9 then the program should print 
-`NOT A DIGIT`.
+Create a new Scala program called `DigitsToWords`. Within the `main` method prompt the user to enter an integer value within the range of 0-9. The program should then print out the written equivalent to that value eg: If the user enters 0 then the program will print out ZERO. If the value entered is outside the range of 0-9 then the program should print `NOT A DIGIT`.
 
 ## 5. Further Exploring Conditional Logic
-Open a new Scala program called `SumOfTwo`. The program should ask the user to enter three numbers. If two of the 
-three numbers can be added together to create the third value then the program should print out `YES` otherwise it 
-should print out `NO`.
+Open a new Scala program called `SumOfTwo`. The program should ask the user to enter three numbers. If two of the three numbers can be added together to create the third value then the program should print out `YES` otherwise it should print out `NO`.
 
 ## 6. Pattern Matching 
 Using the code below create a new program called `DigitsToWordsMatch`:
@@ -121,9 +114,7 @@ object DigitsToWordsMatch {
   }
 }
 ```
-Looking at the code above you should see that it is a modified version of `DigitsToWords` program. Using the match 
-statement is another way of checking whether variables are equal to one another. The `case _ =>` is a catch statement 
-that runs if the variable `digit` does not match any of the other statements.
+Looking at the code above you should see that it is a modified version of `DigitsToWords` program. Using the match statement is another way of checking whether variables are equal to one another. The `case _ =>` is a catch statement that runs if the variable `digit` does not match any of the other statements.
 
 ## 7. Using Match as an Expression
 Using the code below create a program called `DigitsToWordsMatch2`:
@@ -153,14 +144,10 @@ object DigitsToWordsMatch2 {
   }
 }
 ```
-The code above is a slightly modified version of the `DigitsToWordsMatch` program but rather than printing the result 
-straight away it is stored in the variable `result` & printed at the end of the program. Either of the approaches 
-within the two programs can be used, it is up to the developer/programmer to use whichever one they prefer.
+The code above is a slightly modified version of the `DigitsToWordsMatch` program but rather than printing the result straight away it is stored in the variable `result` & printed at the end of the program. Either of the approaches within the two programs can be used, it is up to the developer programmer to use whichever one they prefer.
 
 ## 8. Colour Matching 
-Write a Scala program called `Colours` that prompts the user to enter a number between 1 & 7. The program should then 
-output the corresponding rainbow colour: `red, orange, yellow, green, blue, indigo, violet`. If an invalid number is 
-entered an appropriate message should be printed. Use the `match` method to complete this.
+Write a Scala program called `Colours` that prompts the user to enter a number between 1 & 7. The program should then output the corresponding rainbow colour: `red, orange, yellow, green, blue, indigo, violet`. If an invalid number is entered an appropriate message should be printed. Use the `match` method to complete this.
 
 ## 9. Specifying Common Patterns 
 Using the code below create a Scala program called `DaysOfWeek`:
@@ -183,8 +170,7 @@ object DayOfWeek {
   }
 }
 ```
-The program above shows have multiple cases can be used to match to a single output. The `|` symbol is being used as a 
-pipe to pass the variables through.
+The program above shows have multiple cases can be used to match to a single output. The `|` symbol is being used as a pipe to pass the variables through.
 
 ## 10. Nested if Statements
 With the code below create a Scala program called `SignumNested`:

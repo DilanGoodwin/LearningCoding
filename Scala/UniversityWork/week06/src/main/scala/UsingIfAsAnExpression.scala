@@ -5,11 +5,18 @@ object UsingIfAsAnExpression{
         println("Type in a number: ")
         var number: Int=readInt()
 
-        var result=if(number%2==0)
+        var result=if(number%2==0){
             "even"
-        else
+        }else{
             "odd"
+        }
 
-        println("Your number is "+result)
+        var result1=if(number>=0){
+            "positive"
+        }else{
+            "negative"
+        }
+
+        println("Your number is "+result+" and "+result1)
     }
 }
