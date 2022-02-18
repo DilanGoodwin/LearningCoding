@@ -274,32 +274,3 @@ Create a program called `Triangle3` which draws a reflected right-angled triange
 
 ## 17. Advanced Times Table Grid
 Make a copy of the program `TimesTable2` & rename it to `TimesTable3` but change the program so that the row headers & column headers are separated from the rest of the table using `|` & `-`.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
