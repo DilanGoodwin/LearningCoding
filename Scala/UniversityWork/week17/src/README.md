@@ -103,6 +103,25 @@ def countDivisors(n: Int): Int = {
    d
  }
 ```
-
+The very last line of the function retruns the value, in this case `d`. However sometimes it is easier to adopt a function style rather than using many different types. Following code for `countDivisors` does the same as the program aboe but all on a single line: `def countDivisors(n:Int): Int=(1 until n) filter (k=> n%k==0) length`. It is up to you as the programmer which function style you choose to use.
 
 # Week 17 Challenges
+## 7. Advanced Functions 1
+Write the following functions into a program called `MyFuns`:
+* Prime predicate `prime: Long->Boolean`. Returns true when input is prime & false otherwise.
+
+## 8. Advanced Functions 2
+Add the following function into `MyFuns`:
+* Perfect predicate `perfect: Long->Boolean`. Returns true when input is perfect & false otherwise. A number is perfect when all of its proper divisors can be added together to create itself.
+
+## 9. Advanced Functions 3
+Add the function below to `MyFuns`:
+* Digit to work function `digitToWord: Int->String`. Input range 0-9 returns corresponding string, else returns 'bad digit'.
+
+## 10. Advanced Functions 4
+Write the following function & add it to `MyFuns`:
+* Word-to-digit function `wordToDigit: String->Int`. If input spells one of digits between 0-9, if the input is not valid then function returns `-1`.
+
+## 11. Advanced Functions 5
+Create the following function & add to `MyFuns` program.
+* Leap year predicate `leapYear: Int->Boolean`. Function takes integer representing year Gregorian calendar & returns true if it is a leap year & false otherwise. 
