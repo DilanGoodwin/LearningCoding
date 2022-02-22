@@ -1,7 +1,8 @@
 # Week 1: Basic Programs & Formatting Output
 
 All programs within this section will be named after the title of their relevant section section, making it easier to locare programs later down the line. All code provided for me by the university will also be given under the relevant headers however, any changes that are made by me will only be within the programs themselves. 
-
+<br/><br/>
+It is recommended that you use an IDE like Eclipse when creating & running this code as it is the official Scala IDE but if you would like something like Visual Studio Code or InteliJ could be used however, later down the line some tinkering may need to be done to the development environment to make the program work.
 ## 1. Priting Output & Escape Sequences
 Simply get Scala to display something to the terminal.
 ```
@@ -19,7 +20,7 @@ List tasks to complete based previous program:
   * `print` displays whatever is within its expression without adding a new line by default. Compare this to `println` which adds a new line before displaying its information. It is my understanding that the `ln` within `println` stands for line new.
 * Change the program so output is same previous program. Do not use `print`.
 * Put `\t` between each asterisk. How do `\t` & `\n` work formatting output?
-  * `\t` adds a tab to the printed line where as the `\n` adds a new line where ever it is places within the print line  
+  * `\t` adds a tab to the printed line where as the `\n` adds a new line where ever it is places within the print line
 
 ## 3. Formatting Your Own Output
 Write a program that prints out a diamond shape, using asterisks, to the terminal.

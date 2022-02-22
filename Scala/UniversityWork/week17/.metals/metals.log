@@ -70,3 +70,132 @@ WARNING: Unmatched cancel notification for request id 1
 2022.02.19 20:01:15 INFO  shutting down Metals
 2022.02.19 20:01:16 INFO  Shut down connection with build server.
 2022.02.19 20:01:16 INFO  Shut down connection with build server.
+2022.02.21 09:31:06 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.21 09:31:07 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.21 09:31:07 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.21 09:31:07 INFO  Parse release: 17
+2022.02.21 09:31:12 INFO  time: initialize in 5.11s
+2022.02.21 09:31:13 INFO  Attempting to connect to the build server...
+2022.02.21 09:31:12 INFO  skipping build import with status 'Installed'
+2022.02.21 09:31:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.21 09:31:13 INFO  Attempting to connect to the build server...
+2022.02.21 09:31:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.21 09:31:13 INFO  time: Connected to build server in 0.79s
+2022.02.21 09:31:13 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.21 09:31:19 INFO  shutting down Metals
+2022.02.21 09:31:21 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/templateProgram.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.21 09:31:22 INFO  time: Imported build in 0.2s
+2022.02.21 09:31:21 INFO  time: code lens generation in 8.75s
+java.util.concurrent.RejectedExecutionException: Task scala.concurrent.impl.CallbackRunnable@4dc54477 rejected from java.util.concurrent.ThreadPoolExecutor@2f9ecccc[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 113]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.execute(ThreadPoolExecutor.java:1365)
+	at scala.concurrent.impl.ExecutionContextImpl$$anon$4.execute(ExecutionContextImpl.scala:138)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
+	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
+	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
+	at scala.concurrent.Future.map(Future.scala:292)
+	at scala.concurrent.Future.map$(Future.scala:292)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
+	at scala.concurrent.Future$.apply(Future.scala:659)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$2(MetalsLanguageServer.scala:2349)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$1(MetalsLanguageServer.scala:2347)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Exception in thread "pool-1-thread-4" java.lang.InterruptedException
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1048)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$DefaultPromise.tryAwait0(Promise.scala:243)
+	at coursierapi.shaded.scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:261)
+	at coursierapi.shaded.scala.concurrent.Await$.$anonfun$result$1(package.scala:201)
+	at coursierapi.shaded.scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:62)
+	at coursierapi.shaded.scala.concurrent.Await$.result(package.scala:124)
+	at coursierapi.shaded.coursier.Fetch$FetchTaskOps$.eitherResult$extension(Fetch.scala:327)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:334)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:244)
+	at coursierapi.Fetch.fetch(Fetch.java:239)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:238)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:277)
+	at scala.meta.internal.metals.MtagsResolver$Default.fetch$1(MtagsResolver.scala:40)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:65)
+	at java.base/java.util.concurrent.ConcurrentHashMap.compute(ConcurrentHashMap.java:1916)
+	at scala.meta.internal.metals.MtagsResolver$Default.resolve(MtagsResolver.scala:63)
+	at scala.meta.internal.metals.MtagsResolver.isSupportedScalaVersion(MtagsResolver.scala:13)
+	at scala.meta.internal.metals.MtagsResolver.isSupportedScalaVersion$(MtagsResolver.scala:12)
+	at scala.meta.internal.metals.MtagsResolver$Default.isSupportedScalaVersion(MtagsResolver.scala:20)
+	at scala.meta.internal.troubleshoot.ProblemResolver.isSupportedScalaVersion$1(ProblemResolver.scala:171)
+	at scala.meta.internal.troubleshoot.ProblemResolver.findProblem(ProblemResolver.scala:174)
+	at scala.meta.internal.troubleshoot.ProblemResolver.$anonfun$problemMessage$1(ProblemResolver.scala:61)
+	at scala.collection.immutable.List.flatMap(List.scala:366)
+	at scala.meta.internal.troubleshoot.ProblemResolver.problemMessage(ProblemResolver.scala:60)
+	at scala.meta.internal.metals.Doctor.check(Doctor.scala:134)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$connectToNewBuildServer$8(MetalsLanguageServer.scala:2222)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$indexWorkspace$2(MetalsLanguageServer.scala:2415)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.indexWorkspace(MetalsLanguageServer.scala:2397)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$2(MetalsLanguageServer.scala:2347)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$profiledIndexWorkspace$1(MetalsLanguageServer.scala:2347)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022.02.21 20:57:08 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.21 20:57:09 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.21 20:57:09 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.21 20:57:09 INFO  Parse release: 17
+2022.02.21 20:57:14 INFO  time: initialize in 4.83s
+2022.02.21 20:57:15 INFO  Attempting to connect to the build server...
+2022.02.21 20:57:15 INFO  skipping build import with status 'Installed'
+2022.02.21 20:57:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.21 20:57:15 INFO  Attempting to connect to the build server...
+2022.02.21 20:57:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.21 20:57:15 INFO  time: Connected to build server in 0.65s
+2022.02.21 20:57:15 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.21 20:57:22 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/templateProgram.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.21 20:57:22 INFO  time: code lens generation in 7.2s
+2022.02.21 20:57:22 INFO  time: Imported build in 0.12s
+2022.02.21 20:57:28 INFO  time: indexed workspace in 6.02s
+Feb 21, 2022 9:07:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2022.02.21 21:08:47 INFO  shutting down Metals
+2022.02.21 21:08:47 INFO  Shut down connection with build server.
+2022.02.21 21:08:47 INFO  Shut down connection with build server.
+2022.02.22 07:54:34 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.22 07:54:35 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.22 07:54:35 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.22 07:54:35 INFO  Parse release: 17
+2022.02.22 07:54:40 INFO  time: initialize in 5.02s
+2022.02.22 07:54:41 INFO  Attempting to connect to the build server...
+2022.02.22 07:54:41 INFO  skipping build import with status 'Installed'
+2022.02.22 07:54:45 INFO  shutting down Metals
+2022.02.22 07:54:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.22 07:54:47 INFO  Attempting to connect to the build server...
+2022.02.22 07:54:48 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.22 07:54:48 INFO  time: Connected to build server in 7.06s
+2022.02.22 07:54:48 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.22 07:54:49 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/templateProgram.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.22 07:54:49 INFO  time: code lens generation in 8.34s
