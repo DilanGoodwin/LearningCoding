@@ -45,6 +45,7 @@ println((1 to 10) map db1)
 println((1 to 10) map incr map db1)
 println((1 to 10) map db1 map incr)
 println((1 to 10) map sqr map incr map db1)
+```
 
 ## 3. Introducing Different Types
 ### 3.1
