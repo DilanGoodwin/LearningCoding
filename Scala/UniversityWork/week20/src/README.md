@@ -62,4 +62,55 @@ Add the following functions to the program using recursion & show how they could
 `anyTrue: List[Boolean] -> Boolean` returns true if one element within list is true.
 
 ## 7. Fibonacci
+Fibonacci sequence is number sequence where each number is sum previous two nubers. Below is a function for calculating the n-th fibonacci number:
+```
+def fibonacci(n: BigInt): BigInt =
+  if (n==0) 0
+  else if (n==1) 1
+  else fib(0, 1, n-2)
+  
+def fib(a: BigInt, b: BigInt, n: BigInt): BigInt =
+  if (n==0) a+b
+  else fib(b, a+b, n-1)
+```
+Notice type BigInt which represents unbounded integers which cannot overflow. BigInt is build on top of Java's BigInteger type. Also the `fibonacci` function itself is not recursive, instead an auxiliary function `fib` is recursive instead.
+<br/>
+Create a Scala program using the code above that asks a user to enter a number to strat the fibonacci sequence at.
 
+# Week 20 Challenges
+## 8.Fibo
+### 8.1
+Create a fibonacci sequence that does not use an auxiliary function. `def fibo(n: BigInt): BigInt =`.
+<br/><br/>
+Using the code below get the system clock time in nanoseconds before & after the two functions.
+```
+var t0 = System.nanoTime()
+var fib32 = fibonacci(32)
+var t1 = System.nanoTime()
+println(s"Fib(32) = $fib32. Took ${t1-t0}ns")
+t0 = System.nanoTime()
+fib32 = fibo(32)
+t1 = System.nanoTime()
+println(s"Fib(32) = $fib32. Took ${t1-t0}ns")
+```
+Which one took longer/
+* <placeholder>
+<br/><br/>
+Can you make the program faster?
+* <placeholder>
+
+## 9. qsort
+Famous quick sort algorithm can be written recursively:
+```
+def qsort(xs: List[Int]): List[Int] =
+  if (xs.isEmpty) xs
+  else {
+    val lesser = xs.tail.filter(_ <= xs.head)
+    val greater = xs.tail.filter(_ > xs.head)
+    qsort(lesser) ++ (xs.head :: qsort(greater))
+  }
+```
+Create some experiments to show the algorithm in practice.
+
+## 10. ackermann
+Look up the ackermann function & code a recursive Scala function for the ackermann function.
