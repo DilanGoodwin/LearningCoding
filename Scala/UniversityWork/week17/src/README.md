@@ -62,7 +62,7 @@ println((1 to 10) filter even map sqr)
 ### 3.2
 Now that you understand the basics of how the Scala syntax for functions work add the following functions below to `MathFuns2`:
 #### 1. Odd
-Odd predicate `odd: Int->Int`. Returns true when input is odd number & false otherwise.
+Odd predicate `odd: Int->Boolean`. Returns true when input is odd number & false otherwise.
 #### 2. Inverse
 Inverse operator `inv: Boolean->Boolean`. Returns true when input is false & false when input is true.
 #### 3. Negative

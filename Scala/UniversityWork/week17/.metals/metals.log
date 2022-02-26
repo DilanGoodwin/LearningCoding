@@ -300,3 +300,117 @@ something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/Universit
 2022.02.23 17:14:47 INFO  shutting down Metals
 2022.02.23 17:14:47 INFO  Shut down connection with build server.
 2022.02.23 17:14:47 INFO  Shut down connection with build server.
+2022.02.25 21:11:30 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.25 21:11:30 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.25 21:11:30 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.25 21:11:30 INFO  Parse release: 17
+2022.02.25 21:11:35 INFO  time: initialize in 5.07s
+2022.02.25 21:11:36 INFO  Attempting to connect to the build server...
+2022.02.25 21:11:36 INFO  skipping build import with status 'Installed'
+2022.02.25 21:11:42 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.25 21:11:42 INFO  Attempting to connect to the build server...
+2022.02.25 21:11:42 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.25 21:11:42 INFO  time: Connected to build server in 5.96s
+2022.02.25 21:11:42 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.25 21:11:44 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/ExtendingTheMathFunsLibrary.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.25 21:11:44 INFO  time: code lens generation in 8.26s
+2022.02.25 21:11:44 INFO  time: Imported build in 0.22s
+2022.02.25 21:11:49 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/ExtendingTheMathFunsLibrary.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.25 21:11:51 INFO  time: code lens generation in 10s
+2022.02.25 21:11:51 INFO  time: code lens generation in 9.33s
+2022.02.25 21:11:51 INFO  time: code lens generation in 6.42s
+2022.02.25 21:11:57 INFO  time: indexed workspace in 11s
+Feb 25, 2022 9:12:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 48
+2022.02.25 21:12:24 INFO  compiling root (1 scala source)
+2022.02.25 21:12:26 INFO  time: compiled root in 1.81s
+2022.02.25 21:12:34 INFO  compiling root (1 scala source)
+2022.02.25 21:12:36 INFO  time: compiled root in 2.06s
+Feb 25, 2022 9:12:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 112
+Feb 25, 2022 9:12:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 113
+Feb 25, 2022 9:12:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 114
+Feb 25, 2022 9:13:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 282
+Feb 25, 2022 9:13:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 309
+2022.02.25 21:14:23 INFO  compiling root (1 scala source)
+2022.02.25 21:14:23 WARN  Could not load snapshot text for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/ExtendingTheMathFunsLibrary.scala
+2022.02.25 21:14:24 INFO  time: compiled root in 1.84s
+2022.02.25 21:17:04 INFO  compiling root (1 scala source)
+2022.02.25 21:17:06 INFO  time: compiled root in 2.03s
+2022.02.25 21:18:01 INFO  compiling root (1 scala source)
+2022.02.25 21:18:01 INFO  time: compiled root in 0.54s
+Feb 25, 2022 9:21:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1585
+Feb 25, 2022 9:21:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1587
+Feb 25, 2022 9:21:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1674
+Feb 25, 2022 9:21:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1676
+Feb 25, 2022 9:21:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1675
+Feb 25, 2022 9:21:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1680
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 106)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 99)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 100)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 101)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 104)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 104)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala, 91, 91, 104)
+2022.02.25 21:21:37 INFO  compiling root (1 scala source)
+2022.02.25 21:21:37 INFO  time: compiled root in 0.82s
+Feb 25, 2022 9:23:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1743
+Feb 25, 2022 9:23:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1745
+2022.02.25 21:25:15 INFO  compiling root (1 scala source)
+2022.02.25 21:25:15 INFO  time: compiled root in 0.25s
+2022.02.25 21:25:35 INFO  compiling root (1 scala source)
+2022.02.25 21:25:36 INFO  time: compiled root in 1.18s
+2022.02.25 21:25:38 INFO  compiling root (1 scala source)
+2022.02.25 21:25:38 INFO  time: compiled root in 0.91s
+2022.02.25 21:26:02 INFO  compiling root (1 scala source)
+2022.02.25 21:26:02 INFO  time: compiled root in 0.27s
+Feb 25, 2022 9:26:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2460
+2022.02.25 21:26:10 INFO  compiling root (1 scala source)
+2022.02.25 21:26:10 INFO  time: compiled root in 0.95s
+2022.02.25 21:27:14 INFO  compiling root (1 scala source)
+2022.02.25 21:27:15 WARN  Could not load snapshot text for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingDifferentTypes.scala
+2022.02.25 21:27:15 INFO  time: compiled root in 1.8s
+Feb 25, 2022 9:29:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2850
+Feb 25, 2022 9:29:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2852
+2022.02.25 21:30:38 INFO  compiling root (1 scala source)
+2022.02.25 21:30:38 INFO  time: compiled root in 0.36s
+2022.02.25 21:30:44 INFO  compiling root (1 scala source)
+2022.02.25 21:30:44 INFO  time: compiled root in 0.82s
+2022.02.25 21:30:47 INFO  compiling root (1 scala source)
+2022.02.25 21:30:47 INFO  time: compiled root in 0.73s
+2022.02.25 21:30:48 INFO  compiling root (1 scala source)
+2022.02.25 21:30:48 INFO  time: compiled root in 0.56s
+2022.02.25 21:31:47 INFO  compiling root (1 scala source)
+2022.02.25 21:31:47 INFO  time: compiled root in 0.69s
+2022.02.25 21:32:10 INFO  compiling root (1 scala source)
+2022.02.25 21:32:10 INFO  time: compiled root in 0.74s
+2022.02.25 21:32:42 INFO  compiling root (1 scala source)
+2022.02.25 21:32:42 INFO  time: compiled root in 0.24s
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 85)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 78)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 79)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[<error>]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 80)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 83)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 83)
+something's wrong: no file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala in Array[String]RangePosition(file:///Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAlternativeFunctionDefinitions.scala, 70, 70, 83)
+2022.02.25 21:33:08 INFO  compiling root (1 scala source)
+2022.02.25 21:33:10 INFO  time: compiled root in 1.35s
+2022.02.25 21:33:50 INFO  compiling root (1 scala source)
+2022.02.25 21:33:50 INFO  time: compiled root in 0.85s
+2022.02.25 21:36:13 INFO  compiling root (1 scala source)
+2022.02.25 21:36:13 INFO  time: compiled root in 0.74s
