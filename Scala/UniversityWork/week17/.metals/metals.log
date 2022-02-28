@@ -470,3 +470,67 @@ Feb 26, 2022 10:03:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancella
 WARNING: Unmatched cancel notification for request id 529
 2022.02.26 22:03:50 INFO  compiling root (1 scala source)[0m
 2022.02.26 22:03:51 INFO  time: compiled root in 1.68s[0m
+2022.02.27 19:25:53 INFO  shutting down Metals[0m
+2022.02.27 19:25:53 INFO  Shut down connection with build server.[0m
+2022.02.27 19:25:53 INFO  Shut down connection with build server.[0m
+2022.02.27 19:29:56 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.27 19:29:57 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.27 19:29:57 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.27 19:29:57 INFO  Parse release: 17
+2022.02.27 19:30:02 INFO  time: initialize in 5.02s
+2022.02.27 19:30:02 INFO  Attempting to connect to the build server...
+2022.02.27 19:30:02 INFO  skipping build import with status 'Installed'
+2022.02.27 19:30:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.27 19:30:03 INFO  Attempting to connect to the build server...
+2022.02.27 19:30:03 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.27 19:30:03 INFO  time: Connected to build server in 0.7s
+2022.02.27 19:30:03 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.27 19:30:03 INFO  time: Imported build in 0.29s
+2022.02.27 19:30:10 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/IntroducingAnonymousFunctions.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.27 19:30:13 INFO  time: code lens generation in 9.92s
+2022.02.27 19:30:19 INFO  time: indexed workspace in 15s
+2022.02.27 19:56:53 INFO  shutting down Metals
+2022.02.27 19:56:53 INFO  Shut down connection with build server.
+2022.02.27 19:56:53 INFO  Shut down connection with build server.
+2022.02.27 20:46:29 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.27 20:46:30 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.27 20:46:30 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.27 20:46:30 INFO  Parse release: 17
+2022.02.27 20:46:35 INFO  time: initialize in 5.47s
+2022.02.27 20:46:36 INFO  Attempting to connect to the build server...
+2022.02.27 20:46:36 INFO  skipping build import with status 'Installed'
+2022.02.27 20:46:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.27 20:46:36 INFO  Attempting to connect to the build server...
+2022.02.27 20:46:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.27 20:46:36 INFO  time: Connected to build server in 0.46s
+2022.02.27 20:46:36 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.27 20:46:37 INFO  time: Imported build in 0.17s
+2022.02.27 20:46:44 INFO  time: indexed workspace in 7.81s
+Feb 27, 2022 8:47:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2022.02.27 20:48:52 INFO  compiling root (1 scala source)
+2022.02.27 20:48:52 INFO  time: compiled root in 0.54s
+2022.02.27 20:49:04 INFO  compiling root (1 scala source)
+2022.02.27 20:49:04 INFO  time: compiled root in 0.56s
+2022.02.27 21:03:05 INFO  shutting down Metals
+2022.02.27 21:03:05 INFO  Shut down connection with build server.
+2022.02.27 21:03:05 INFO  Shut down connection with build server.
+2022.02.28 09:08:26 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/lsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.02.28 09:08:26 INFO  logging to file /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/metals.log
+2022.02.28 09:08:26 INFO  Started: Metals version 0.11.1 in workspace '/Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17' for client Visual Studio Code 1.64.2.
+2022.02.28 09:08:26 INFO  Parse release: 17
+2022.02.28 09:08:32 INFO  time: initialize in 5.16s
+2022.02.28 09:08:33 INFO  Attempting to connect to the build server...
+2022.02.28 09:08:33 INFO  skipping build import with status 'Installed'
+2022.02.28 09:08:39 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.28 09:08:39 INFO  Attempting to connect to the build server...
+2022.02.28 09:08:39 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/project/.metals/bsp.trace.json or /Users/dilangoodwin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.02.28 09:08:39 INFO  time: Connected to build server in 6.51s
+2022.02.28 09:08:39 INFO  Connected to Build server: Bloop v1.4.12
+2022.02.28 09:08:41 INFO  no build target found for /Users/dilangoodwin/Documents/GitCV/Scala/UniversityWork/week17/src/main/scala/Divisors.scala. Using presentation compiler with project's scala-library version: 3.1.0
+2022.02.28 09:08:41 INFO  time: code lens generation in 8.78s
+2022.02.28 09:08:42 INFO  time: Imported build in 0.32s
+2022.02.28 09:08:49 INFO  time: indexed workspace in 6.58s
+2022.02.28 09:09:20 INFO  shutting down Metals
+2022.02.28 09:09:20 INFO  Shut down connection with build server.
+2022.02.28 09:09:20 INFO  Shut down connection with build server.
