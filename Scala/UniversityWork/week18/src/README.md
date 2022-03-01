@@ -44,7 +44,7 @@ Create program called `ModuleResults` & write Scala function `getResult: (Int,In
 ```
 Test the function with mutliple inputs to show a range of outputted results.
 
-## mathfuns4
+## 5.mathfuns4
 Consider the Scala program below:
 ```
 object MathFuns4 {
@@ -67,6 +67,7 @@ Look at the data type of the functions. Can you see a potential problem?
 * <placeholder>
 <br/><br/>
 Due to data type `Int` only having fixed representation 4 bytes if the number reaches its maximum values `2147483647` if 1 is added to it then the number will just loop round. Add the code below to the program for the code above:
+
 ```
 val big: Int = 2147483647
    val small: Int = -2147483648
@@ -83,6 +84,7 @@ val big: Int = 2147483647
 //    println( s"$mid1 * $mid1 = ${mul(mid1, mid1)}" )
 //    println( s"$big / 0 = ${div(big, 0)}" )
 ```
+
 These last experiments are dramatic because causes program throw exception, better identifyerror & handle it rather than ignore it. There are several different ways to stop these errors from occuring:
 * Using `try ... catch` mechanism
 * Testing preconditions by checking values before calling functions that can cause errors. This could be done by wrapping an if statement around the function call.
@@ -119,6 +121,7 @@ Note the following:
 * Function becomes more complex which adds time before execution, while in this example it adds only nanoseconds of time the more complex your program the bigger the time increase.
 <br/><br/>
 Create a program called `MathFuns5` & add the following code:
+
 ```
 object MathFuns5 {
 
@@ -164,6 +167,7 @@ object MathFuns5 {
  }
 }
 ```
+
 Looking at the program code a functions has been added called `analyseAdd` this is done so that when an empty container is returned it doesn't create a hole in the output & instead runs the `case None` avoiding an error. `match` statement has also returned & is only used when displaying the result of the `add` function.
 <br/>
 Using the `add` functions & `analyseAdd` function as guidelines create the function `div: (Int, Int)->Option[Int]`. The only error that you have to account for is division by 0. Write an `analyseDiv` function to display the results from `div` function.

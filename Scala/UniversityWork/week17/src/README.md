@@ -104,7 +104,7 @@ def countDivisors(n: Int): Int = {
    d
  }
 ```
-The very last line of the function retruns the value, in this case `d`. However sometimes it is easier to adopt a function style rather than using many different types. Following code for `countDivisors` does the same as the program aboe but all on a single line: `def countDivisors(n:Int): Int=(1 until n) filter (k=> n%k==0) length`. It is up to you as the programmer which function style you choose to use.
+The very last line of the function retruns the value, in this case `d`. However sometimes it is easier to adopt a function style rather than using many different types. Following code for `countDivisors` does the same as the program above but all on a single line: `def countDivisors(n:Int): Int=(1 until n) filter (k=> n%k==0) length`. It is up to you as the programmer which function style you choose to use.
 
 # Week 17 Challenges
 ## 7. Advanced Functions 1
