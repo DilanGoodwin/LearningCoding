@@ -69,7 +69,7 @@ Look at the data type of the functions. Can you see a potential problem?
 Due to data type `Int` only having fixed representation 4 bytes if the number reaches its maximum values `2147483647` if 1 is added to it then the number will just loop round. Add the code below to the program for the code above:
 
 ```
-val big: Int = 2147483647
+   val big: Int = 2147483647
    val small: Int = -2147483648
    val mid0: Int = 46340
    val mid1: Int = 46341
@@ -85,7 +85,7 @@ val big: Int = 2147483647
 //    println( s"$big / 0 = ${div(big, 0)}" )
 ```
 
-These last experiments are dramatic because causes program throw exception, better identifyerror & handle it rather than ignore it. There are several different ways to stop these errors from occuring:
+These last experiments are dramatic because causes program throw exception, better identify error & handle it rather than ignore it. There are several different ways to stop these errors from occuring:
 * Using `try ... catch` mechanism
 * Testing preconditions by checking values before calling functions that can cause errors. This could be done by wrapping an if statement around the function call.
 * Lifting return type from `T` to `option[T]`. Faster way handling exceptional results & approach that developed within further exercises.

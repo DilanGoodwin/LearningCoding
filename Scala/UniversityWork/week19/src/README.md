@@ -24,6 +24,7 @@ University honours degree is classified, once students final average mark known 
 * 70 to 100	First(1st)
 <br/><br/>
 Copy the code below into a Scala program which defines some degree classifications with a written function calculate students degree classification.
+
 ```
 object ModuleMarks {
 
@@ -45,6 +46,7 @@ object ModuleMarks {
 
 }
 ```
+
 Parts of the program may need explaining:
 * `class DegreeClassification` introduces new general type, name represents something relevant problem solving.
 * `case object Fail` introduces new constant value called `Fail`, represents fail degree, which introduced keywords `case object` meaning only one them.
@@ -57,6 +59,7 @@ Parts of the program may need explaining:
 * Valid inputs are between 0 & 100. Possible function receive invalid input which any other `Int` value. If invalid input received functions throws an exception.
 <br/><br/>
 A separate program can be written to test this function but using JUnit is easier. Create a Scala class called `TestModuleMarks` & copy the code below into it.
+
 ```
 import org.junit.Test
 import junit.framework.TestCase
@@ -79,6 +82,7 @@ class TestModuleMarks {
  
 }
 ```
+
 The import statements include the relevant unit testing framework components to the program. The `import ModuleMarks._` brings the contents of the ModuleMarks program into the test. `@Test` is an annotation that states the following function is a test case which take in no input values & return on output. `assertEquals` is a JUnit assertation, first argument is string describes the test which is optional but good practice to include. Second argument is the expected value with the third argument being the actual value. 
 <br/>
 `(ecpected = classOf[IllegalArgumentException])` how tell test case that an exception is expected, ensures that when functions is tested & throws an exception then the test has succeeded. 
@@ -156,6 +160,7 @@ Example: suppose program required get input from user & print next number that p
 * `getNextCandidate` function generates next candidate number that could be prime. Dummy implementation returns next number ascending order but not optimal because even numbers cannot be prime.
 * `isPrime` functions tests see if input parameter prime number, not been implemented at stage. Make comple set return true, clearly need refinement later.
 <br/><br/>
+
 ```
 def isPrime(x: Int): Boolean = true       // not written - dummy value returned
 
@@ -175,13 +180,16 @@ def main(args: Array[String]): Unit = {
   println(findNextPrime(n))
 }
 ```
+
 Program consists code that compiles & runs. However not meet specification until incomplete functions been implemented. Neertheless working code provides outline structure which evolve into working solution. `isPrime` function refined by replacing arbitary return value code performs calculation:
+
 ```
 def isPrime(x: Int): Boolean =
   (x==2) || (x>1) &&
             (x%2==1) &&
             ((3 to Math.round(Math.sqrt(x)).toInt by 2) forall (x % _ != 0))
 ```
+
 Version function program closer working solution. Proceed refine `getNextCandidate` function. Stub wrote earlier contains arbitary calculation simply adding one. Further refinement be: `def getNextCandidate(x: Int): Int = x + (if (x%2==0) 1 else 2)`
 
 ## 7. Primes

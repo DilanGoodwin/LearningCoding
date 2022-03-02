@@ -33,7 +33,7 @@ def factorial (n: Long): Long = {
 Within the main function that shows the `factorial(0)` to `factorial(20)`. 
 <br/>
 What would happen if you tried to evaluate `factorial(21)`?
-* <placeholder>
+* Exceeds the byte allocation for `Long` causing it to loop round.
 
 ## 5. sumFromTo
 Complete the recursive function `def sumFromTo (a: Int, b: Int): Int =` so that it calculates the sum of numbers from a to b (inclusive).
@@ -75,7 +75,7 @@ def fib(a: BigInt, b: BigInt, n: BigInt): BigInt =
 ```
 Notice type BigInt which represents unbounded integers which cannot overflow. BigInt is build on top of Java's BigInteger type. Also the `fibonacci` function itself is not recursive, instead an auxiliary function `fib` is recursive instead.
 <br/>
-Create a Scala program using the code above that asks a user to enter a number to strat the fibonacci sequence at.
+Create a Scala program using the code above that asks a user to enter a number to start the fibonacci sequence at.
 
 # Week 20 Challenges
 ## 8.Fibo
