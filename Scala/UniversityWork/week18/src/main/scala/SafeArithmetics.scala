@@ -43,7 +43,17 @@ object SafeArithmetics{
     }
 
     def sub(x:Int,y:Int): Option[Int]={
-        None
+        var numb1: Int=x
+        var numb2: Int=y
+        if((x==Int.MinValue&&y>1)||(x==Int.MaxValue&&y>1)){
+            None
+        }else if(y==0){
+            Some(x)
+        }else{
+            numb1=numb1-1
+            numb2=numb2-1
+            sub(numb1,numb2)
+        }
     }
 
     def analyseSub(x:Int,y:Int): Unit={
