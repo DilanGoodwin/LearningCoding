@@ -12,7 +12,7 @@ object LimitCounter{
         counter=lo
         upperLimit=up
     }
-    def selLowerLimit(lo:Int): Unit={
+    def setLowerLimit(lo:Int): Unit={
         lowerLimit=lo
         if(counter<lo){
             counter=lo
@@ -47,7 +47,7 @@ object LimitCounter{
     def getValue(): Int={
         counter
     }
-    def isAtLoverLimit(): Boolean={
+    def isAtLowerLimit(): Boolean={
         if(counter==lowerLimit){
             true
         }else{
@@ -65,10 +65,55 @@ object LimitCounter{
 }
 
 object UseLimitCounter{
+
+    def callingLowerLimit(count:Int,iteration:Int): Unit={
+        if(count==iteration){
+            println("END")
+        }else{
+            print(LimitCounter.getValue+", ")
+            while(LimitCounter.getValue>LimitCounter.getUpperLimit()){
+                LimitCounter.dec()
+                if(LimitCounter.isAtUpperLimit()){
+                    print(LimitCounter.getValue()+"\n")
+                }else{
+                    print(LimitCounter.getValue()+", ")
+                }
+            }
+            LimitCounter.setToLowerLimit()
+            callingLowerLimit(count,iteration+1)
+        }
+    }
+    def callingUpperLimit(count:Int,iteration:Int): Unit={
+        if(count==iteration){
+            println("END")
+        }else{
+            print(LimitCounter.getValue+", ")
+            while(LimitCounter.getValue<LimitCounter.getUpperLimit()){
+                LimitCounter.inc()
+                if(LimitCounter.isAtUpperLimit()){
+                    print(LimitCounter.getValue()+"\n")
+                }else{
+                    print(LimitCounter.getValue()+", ")
+                }
+            }
+            LimitCounter.setToLowerLimit()
+            callingUpperLimit(count,iteration+1)
+        }
+    }
+
     def main(args: Array[String]): Unit={
-        // Make it so the user enters two values
-        // Program counts up from the smaller value to bigger value
-        // Then back from bigger value to lower value
-        // Use all of the functions within the LimitCounter object
+        println("\n\t\tMethod 1\n")
+        LimitCounter.setLowerLimit(readLine("Please enter lower limit: ").toInt)
+        LimitCounter.setUpperLimit(readLine("Please enter upper limit: ").toInt)
+        LimitCounter.reset(LimitCounter.getLowerLimit(),LimitCounter.getUpperLimit())
+
+        var count: Int=readLine("How many times would you like it to loop: ").toInt
+        var iteration: Int=0
+
+        if(LimitCounter.getLowerLimit()>LimitCounter.getUpperLimit()){
+            callingLowerLimit(count,iteration)
+        }else if(LimitCounter.getUpperLimit()>LimitCounter.getLowerLimit()){
+            callingUpperLimit(count,iteration)
+        }
     }
 }
