@@ -442,7 +442,7 @@ object Canvas {
   def reset(){
     x=0
     y=0
-    direction =DEFAULT_DIRECTION
+    direction=DEFAULT_DIRECTION
     background=DEFAULT_BACKGROUND
     nib=DEFAULT_NIB
     writing=false
@@ -478,7 +478,6 @@ object Canvas {
     if (isWriting){   // if pen is down then mark the canvas
       grid(x)(y)=Some(nib)
     }
-      
     direction match{ // Adjust (x, y) without moving off the canvas
       case N  => if(y<Ymax){
         y=y+1
@@ -575,3 +574,42 @@ object Canvas {
   reset()
 }
 ```
+
+## 3. EditCanvas
+Add following methods `Canvas` library. After each addition create new picture demo program to demonstrate new method action.
+
+### 3.1 Rectangle
+Print filled-in rectangle side m by n
+
+### 3.2 Square
+Print filled-in square side n
+
+### 3.3 Star
+Print star size n
+
+### 3.4 Spiral
+Print spiral patter, think parameter need control size spiral printed 
+
+### 3.5 Checkerboard
+Print checkerboard m square each size n down each side. Adjust dimensions canvas (`DEFAULT_WIDTH` & `DEAFULT_HEIGHT`) demonstrate method.
+
+## 4. Digits1
+Add 10 new methods `Canvas` library, methods should called `zero`,`one`,... Each method print out digit describes within seven by seven box. 
+
+## 5. Digits2
+Add new methods canvas library `number(n:Long)` method print number onto canvas. `number(22)` might print:
+```
+*****    ***** 
+*     *  *     *
+      *        *
+ *****    ***** 
+*        *      
+*        *      
+ ******   ******
+```
+Once finished method written should print P-number on canvas.
+
+## 6. Canvas2
+Canvas not allow cursor (pen nib) move beyond any canvas boundaries. Change behaviour canvas so wraps around. If pen left most column then move left moves nib to corresponding position right most column. Same behaviour should observed top & bottom boundaries. Suggest making copy `Canvas` called `Canvas2`.
+<\n><\n>
+Write picture program demonstrates painting onto new canvas. Should demonstarte new wrap around feature.
