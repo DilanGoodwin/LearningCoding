@@ -1,0 +1,18 @@
+package demo
+
+import gfx.Canvas._
+import gfx.EditCanvas._
+import gfx.Compass._
+
+object Picture6{
+    def main(args: Array[String]): Unit={
+        setXY(30,10)
+        setNib('x')
+        setBackground('.')
+        setDirection(E)
+        startWriting()
+        spiralShape(5)
+        paint() 
+    }
+    
+}

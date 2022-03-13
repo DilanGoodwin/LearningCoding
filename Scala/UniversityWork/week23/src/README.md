@@ -588,7 +588,7 @@ Print filled-in square side n
 Print star size n
 
 ### 3.4 Spiral
-Print spiral patter, think parameter need control size spiral printed 
+Print spiral pattern, think parameter need control size spiral printed 
 
 ### 3.5 Checkerboard
 Print checkerboard m square each size n down each side. Adjust dimensions canvas (`DEFAULT_WIDTH` & `DEAFULT_HEIGHT`) demonstrate method.

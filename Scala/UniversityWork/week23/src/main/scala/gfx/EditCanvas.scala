@@ -53,4 +53,52 @@ object EditCanvas{
         turn(right,5)
         move(n)
     }
+    def spiralShape(n:Int){
+        for(i <- 1 to n){
+            repeat(i){
+                move(i)
+                turn(right,1)
+            }
+        }
+    }
+    def checkerBoard(){
+        def movingLeft(){
+            stopWriting
+            repeat(2){
+                turn(left,2)
+                move(1)
+            }
+            startWriting()
+        }
+
+        def movingRight(){
+            stopWriting()
+            turn(right,2)
+            move(1)
+            turn(right,2)
+            startWriting()
+        }
+
+        for(x <- 1 to 1){
+            move(3)
+            movingLeft()
+            move(3)
+            movingRight()
+            move(3)
+
+            setNib('O')
+
+            movingLeft()
+            move(3)
+            movingRight()
+            move(3)
+            movingLeft()
+            move(3)
+
+            setNib('X')
+
+            movingRight()
+            move(3)
+        }
+    }
 }
