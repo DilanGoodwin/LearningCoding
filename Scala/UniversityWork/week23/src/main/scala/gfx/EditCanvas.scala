@@ -62,43 +62,43 @@ object EditCanvas{
         }
     }
     def checkerBoard(){
-        def movingLeft(){
-            stopWriting
-            repeat(2){
-                turn(left,2)
-                move(1)
+        for(y <- 0 to 9){
+            if(y%3==0||y==0){
+                setXY(y,0)
+                move(3)
+                for(x <- 1 to 14){
+                    if(x%2!=0){ // Turn Left
+                        stopWriting()
+                        repeat(2){
+                            turn(left,2)
+                            move(1)
+                        }
+                        startWriting()
+                    }else if(x%2==0){ //Turn Right
+                        stopWriting()
+                        if(y==0){
+                            turn(right,2)
+                            move(1)
+                            turn(right,2)
+                        }else{
+                            repeat(2){
+                                turn(right,2)
+                                move(1)
+                            }
+                        }
+                        startWriting()
+                    }
+
+                    if(x%3==0){
+                        if(getNib=='x'){
+                            setNib('O')
+                        }else if(getNib=='O'){
+                            setNib('x')
+                        }
+                    }
+                    move(3)
+                }
             }
-            startWriting()
-        }
-
-        def movingRight(){
-            stopWriting()
-            turn(right,2)
-            move(1)
-            turn(right,2)
-            startWriting()
-        }
-
-        for(x <- 1 to 1){
-            move(3)
-            movingLeft()
-            move(3)
-            movingRight()
-            move(3)
-
-            setNib('O')
-
-            movingLeft()
-            move(3)
-            movingRight()
-            move(3)
-            movingLeft()
-            move(3)
-
-            setNib('X')
-
-            movingRight()
-            move(3)
         }
     }
 }
