@@ -62,7 +62,7 @@ object EditCanvas{
         }
     }
     def checkerBoard(){
-        for(y <- 0 to 9){
+        for(y <- 0 to 54){
             if(y%3==0||y==0){
                 setXY(y,0)
                 move(3)
@@ -97,6 +97,11 @@ object EditCanvas{
                         }
                     }
                     move(3)
+                }
+                if(getNib=='x'){
+                    setNib('O')
+                }else if(getNib=='O'){
+                    setNib('x')
                 }
             }
         }
