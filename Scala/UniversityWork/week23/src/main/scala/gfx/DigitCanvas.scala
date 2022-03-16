@@ -27,7 +27,7 @@ object DigitCanvas{
         setDirection(W)
         move(7)
         turn(right,2)
-        move(4)
+        move(3)
         turn(right,2)
         move(7)
         turn(left,2)

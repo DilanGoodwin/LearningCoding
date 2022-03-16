@@ -6,9 +6,12 @@ Create a new Scala class called `Car` & new Scala object called `UseCar` using t
 ```
 class Car(private var colour:String,private var make:String,private var maxSpeed:Int,private var currentSpeed:Int){
   def this(colour:String,make:String,maxSpeed:Int)={
+    this(colour,make,maxSpeed,0)
+  }
+  def this(colour:String,make:String)={
     this(colour,make,150)
   }
-  def accelerate{
+  def accelerate()={
     if(currentSpeed<maxSpeed){
       currentSpeed+=1
     }
