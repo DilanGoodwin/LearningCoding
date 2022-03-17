@@ -81,7 +81,7 @@ Add the function below to the program, including examples of how they could be u
 ```
 
 ## 3. Counter 4
-Create a new counter lass called `LimitCounter` with the purpose to count either up/down in steps 1 between lower & upper value. When the counter reaches the upper value it should wrap around back to the lower value. If the counter is at the lower value & decremented then should wrap around to upper value.
+Create a new counter class called `LimitCounter` with the purpose to count either up/down in steps 1 between lower & upper value. When the counter reaches the upper value it should wrap around back to the lower value. If the counter is at the lower value & decremented then should wrap around to upper value.
 
 ### 3.1 Constructors
 Default constructor which sets inital values lower limit 0, upper limit 10 & counter 0. Auxilliary constructor accept value initial values lower limit/upper limit & set counter lower limit. Auxilliary constructor accept value initial values lower/upper limit & counter.
@@ -103,7 +103,8 @@ Functions that return values from the encapsulated sate.
 * `def getValue: Int` Returns current counter value.
 * `def isAtLowerLimit: Boolean` Returns true if counter currently at lower limit else false.
 * `def isAtUpperLimit: Boolean` Returns true if counter currently at upper limit else false.
-</n></n>
+
+### 3.4 Main Method
 Once finished copying codde create a main function within an object called `UseLimitCounter` demonstrate all constructors & some functions being used. Consider problems mentioned previous weeks for `Counter` object. Similar problems occur constructors?
 
 ## 4. Birthdays
