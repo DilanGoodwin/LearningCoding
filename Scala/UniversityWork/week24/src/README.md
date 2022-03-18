@@ -180,4 +180,62 @@ one--->|                             |  two--->|                                
                                                |__________________________________|
 ```
 
-Changing 
+This allows you to independently change each of the layers. Constructors can take parameters which can be used to initialise state to set user specified values at creation. The following parameters have been set to be defined at creation for `Layer`:
+
+```
+class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
+```
+
+When new layer created user supply initial values dor dimensions, foreground & background, initial direction & pen state. The entire class is shown below:
+
+```
+package gfx
+import Array._
+import Compass._
+
+class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
+
+  // Fills In Blanks User Input Creating Instance Class
+  def this(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction)={
+    this(horiz,vert,fg,bg,dir,false)
+  }
+  def this(horiz:Int,vert:Int,fg:Char,bg:Char)={
+    this(horiz,vert,fg,bg,N,false)
+  }
+  def this(horiz:Int,vert:Int,fg:Char)={
+    this(horiz,vert,fg,'.',N,false)
+  }
+  def this(horiz:Int,vert:Int)={
+    this(horiz,vert,'*','.',N,false)
+  }
+
+  // Privatises Values Layer Class
+  private val Xmax: Int=horiz-1
+  private val Ymax: Int=vert-1
+  private var x: Int=_
+  private var y: Int=_
+  private var direction: Direction=_
+  private var nib: Char=_
+  private var background: Char=_
+  private var writing: Boolean=_
+  private var grid: Array[Array[Option[Char]]]=ofDim[Option[Char]](horiz,vert)
+
+  // Resets Canvas Initial State
+  def reset(): Unit={
+    x=0
+    y=0
+    direction=dir
+    background=bg
+    nib=fg
+    writing=wr
+    for(i<-0 to Xmax; j<-0 to Ymax){
+      grid(i)(j)=None
+    }
+  }
+
+  // Accessor Methods
+  def getX: Int=x
+  def getY: Int=y
+  def getXY: (Int,Int)=(x,y)
+  def getDirection: Direction=direction
+  def 

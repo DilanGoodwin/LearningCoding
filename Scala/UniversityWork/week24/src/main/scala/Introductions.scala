@@ -29,5 +29,6 @@ object UseCar{
         }
 
         println(c1.getInfo)
+        println(this)
     }
 }
