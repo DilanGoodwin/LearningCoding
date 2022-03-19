@@ -238,4 +238,20 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
   def getY: Int=y
   def getXY: (Int,Int)=(x,y)
   def getDirection: Direction=direction
-  def 
+  def getBackground: Char=background
+  def getNib: Char=nib
+  def isWriting: Boolean=writing
+  def getXmax: Int=Xmax
+  def getYmax: Int=Ymax
+  def getPixelAt(i:Int,j:Int): Option[Char]={
+    if((i>=0)&&(i<=Xmax)&&(j>=0)&&(j<=Ymax)){
+      grid(i)(j)
+    }else{
+      None
+    }
+  }
+
+  // Mutator/Setter Methods
+  def setX(newX:Int): Unit={
+    x=Math.min(Math.max(0,newX),Xmax)
+  }
