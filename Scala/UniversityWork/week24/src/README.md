@@ -255,3 +255,173 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
   def setX(newX:Int): Unit={
     x=Math.min(Math.max(0,newX),Xmax)
   }
+  def setY(newY:Int): Unit={
+    y=Math.min(Math.max(0,newY),Ymax)
+  }
+  def setXY(newX:Int,newY:Int): Unit={
+    setX(newX)
+    setY(newY)
+  }
+  def setBackground(bg:Char): Unit={
+    background=bg
+  }
+  def setNib(n:Char): Unit={
+    nib=n
+  }
+  def setDirection(d:Direction): Unit={
+    direction=d
+  }
+  def startWriting(): Unit={
+    writing=true
+  }
+  def stopWriting(): Unit={
+    writing=false
+  }
+
+  // Painting Canvas
+  def paint(): Unit={
+    for(j<-Ymax to 0 by -1){
+      for(i<-0 to Xmax){
+        grid(i)(j) match{
+          case None => print(background)
+          case Some(c) => print(c)
+        }
+      }
+     println()
+    }
+  }
+
+  // Move Cursor
+  def move(): Unit={
+    if(isWriting){
+      grid(x)(y)=Some(nib)
+    }
+    direction match{
+      case N => if(y<Ymax){
+        y=y+1
+      }
+      case NE => if((y<Ymax)&&(x<Xmax)){
+        y=y+1
+        x=x+1
+      }
+      case E => if(x<Xmax){
+        x=x+1
+      }
+      case SE => if((y>0)&&(x<Xmax)){
+        y=y-1
+        x=x+1
+      }
+      case S => if(y>0){
+        y=y-1
+      }
+      case SW => if((y>0)&&(x>0)){
+        y=y-1
+        x=x-1
+      }
+      case W => if(x>0){
+        x=x-1
+      }
+      case NW => if((y<Ymax)&&(x>0)){
+        y=y+1
+        x=x-1
+      }
+    }
+  }
+
+  // Turn Pen Direction
+  def turn(leftOrRight:Direction=>Direction){
+    direction=leftOrRight(direction)
+  }
+
+  // Repeat Given Action Set n Times
+  def repeat(n:Int)(a:=>Unit)={
+    for(i<-1 to n){
+      a
+    }
+  }
+
+  // Move n Times
+  def move(n:Int): Unit={
+    repeat(n){
+      move()
+    }
+  }
+
+  // Turn Right/Left n Times
+  def turn(leftOrRight:Direction=>Direction,n:Int): Unit={
+    repeat(n){
+      turn(leftOrRight)
+    }
+  }
+
+  // Filled Square
+  def filledSquare(n:Int): Unit={
+    for(i<-n to 1 by -2){
+      square(i)
+      turn(right,1)
+      move()
+      turn(left,1)
+    }
+  }
+
+  // Square
+  def square(n:Int): Unit={
+    if(n<2){
+      move()
+    }else{
+      repeat(4){
+        move(n-1)
+        turn(right,2)
+      }
+    }
+  }
+
+  // Isosceles Triangle Base Length n
+  def tri(n:Int): Unit={
+    move(n)
+    turn(right,3)
+    move(n/2)
+    turn(right,2)
+    move(n/2)
+    turn(right,3)
+  }
+
+  // Reflect Canvas About Imaginary Line Vertically
+  def flipAboutVertical(): Unit={
+    for(i<-0 to Xmax; j<-0 to (Ymax/2)){
+      val temp=grid(i)(j)
+      grid(i)(j)=grid(i)(Ymax-j)
+      grid(i)(Ymax-j)=temp
+    }
+  }
+
+  // Relect Canvas About Imaginary Line Horizontally
+  def flipAboutHorizontal(): Unit={
+    for(j<-0 to Ymax;i<-0 to (Xmax/2)){
+      val temp=grid(i)(j)
+      grid(i)(j)=grid(Xmax-i)(j)
+      grid(Xmax-i)(j)=temp
+    }
+  }
+
+  // Shift All Pixels One Place Right
+  def shiftRight(): Unit={
+    for(j<-0 to Ymax;i<-Xmax to 1 by -1){
+      grid(i)(j)=grid(i-1)(j)
+    }
+  }
+
+  // Mask
+  def mask(other:Layer): Unit={
+    for(j<-0 to Xmax;j<-0 to Ymax){
+      if(other.getPixelAt(i,j).isEmpty){
+        grid(i)(j)=None
+      }
+    }
+  }
+  reset()
+}
+```
+
+## Using Layer Build Image
+
