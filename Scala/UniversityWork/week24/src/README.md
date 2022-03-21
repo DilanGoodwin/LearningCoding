@@ -424,4 +424,114 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
 ```
 
 ## Using Layer Build Image
+Purpose allowing multiple layers that image be constructed from. \one layer placed above another & where layer has empty pixel then layer below can be seen. Top moat layer considered layer 0. Provide an Image class represent collection layers. Methods provided manipulating layers.
+
+```
+package gfx
+
+class Image(initLayer:Layer){
+  // Image Have At Least One Layer
+  private var layers: List[Layer]=List(initLayer) // Layer 0 Top Stack
+  private var background: Char=initLayer.getBackground
+
+  // Set New Background Character
+  def setBackground(bg:Char){
+    background=bg
+  }
+
+  // Return Largesr X-Dimension/Y-Dimension All Stacked Layers
+  def maxX: Int=layers.map(_.getXmax).max
+  def maxY: Int=layers.map(_.getYmax).max
+  def getNumberOfLayers: Int=Layers.length
+
+  // Return Layer Number First Non-None Pixel Given Co-Ordinate
+  def getActiveLayer(i:Int,j:Int): Int={
+    layers.takeWhile(_.getPixelAt(i,j).isEmpty).length
+  }
+
+  // Return Top-Most Active Pixel Given Co-Ordiante
+  def getActivePixel(i:Int,j:Int): Option[Char]={
+    val idx=getActiveLayer(i,j)
+    if(idx==layers.length){
+      None
+    }else{
+      layers(idx).getPixelAt(i,j)
+    }
+  }
+
+  // Move Given Layer Top
+  def moveLayerToTop(idx:Int): Unit={
+    if((idx>=0)&&(idx<layers.length)){
+      layers=layers(idx) :: (layers.take(idx) ++ layers.drop(idx+1))
+    }
+  }
+
+  // Move Ative Layer Top
+  def moveActiveLayerToTop(i:Int,j:Int): Unit={
+    val idx=getActiveLayer(i,j)
+    moveLayerToTop(idx)
+  }
+
+  // Push New Layer Top Current Picture
+  def push(layer:Layer): Unit={
+    layers=layer :: layers
+  }
+
+  // Insert Layer Current Picture
+  def insertLayer(i:Int,layer:Layer): Unit={
+    layers=layers.take(i) ++ (layer :: layers.drop(i))
+  }
+
+  // Removes Specified Layer From Image
+  def removeLayer(i:Int): Unit={
+    layers=layers.take(i) ++ layers.drop(i+1)
+  }
+
+  // Reverse Order Layers
+  def reverseLayers(): Unit={
+    layers=layers.reverse
+  }
+
+  // Paint Image Terminal
+  def paint(): Unit={
+    for(j<-maxY to 0 by -1){
+      for(i<-0 to maxX){
+        getActivePixel(i,j) match{
+          case None => print(background)
+          case Some(c) => print(c)
+        }
+      }
+    println()
+    }
+  }
+}
+```
+
+# Week 24 Challenges
+
+## 1. Picture 3
+Add `Layer` & `Image` classes graphics package `gfx`. Remember these classes not object so when create them need create classes each them. Within the `demo` package create following program:
+
+```
+package demo
+
+object Picture3{
+  import gfx.Layer
+  import gfx.Image
+
+  def main(args: Array[String]): Unit={
+    val zero: Layer=new Layer(40,20,'0')
+    val one: Layer=new Layer(50,15,'1')
+
+    zero.setXY(20,5)
+    zero.startWriting()
+    zero.square(7)
+    one.setXY(23,8)
+    one.startWriting()
+    one.square(7)
+    zero.paint()
+    one.paint()
+  }
+}
+```
 
