@@ -535,3 +535,130 @@ object Picture3{
 }
 ```
 
+## 2. Picture 4
+Make copy `Picture 3` & call it `Picture 4` but replace 2 lines that paint indicidual layers with following:
+
+```
+val p: Image=new Image(one)
+p.push(zero)
+p.paint()
+```
+
+Experiment with the following cases & adpat the program with the modifications below:
+
+### 2.1
+Add the following lines, how does the image displayed differ from previous image:
+
+```
+p.moveLayerToTop(1)
+p.paint()
+```
+
+### 2.2
+Create 3rd layer call it `two`. Put something interesting on the layer, then add the layer to the top of the image stack & print it out. Try reversing the order of the layers & printing again.
+
+## 3. Augment Layer
+Previous week you added new methods to `Canvas` library, add these methods to the `Layer` library. Then create new image with multiple layers which draw picture each layer using digit methods. Try adding, removing & changing order layers resulting image changes each time. By doing this gain experience each methods in `Image` library. 
+
+## 4. Picture 5
+Study following program carefully, it blends features functional programming & features object-oriented programming.
+
+```
+package demo
+
+object Picture5{
+  import gfx.Layer
+  import gfx.Image
+  import gfx.Compass._
+
+  def main(args: Array[String]): Unit={
+    val layers=(0 to 9) map (i=>new Layer(40,15,(i+48).toChar,' ',N,true))
+    for (i<-0 to 9){
+      layers(i).setXY(i*3,i)
+      layers(i).filledSquare(5)
+    }
+    val image=new Image(layers(9))
+    for(i<-8 to 0 by -1){
+      image.push(layers(i))
+    }
+    image.paint()
+    layers map(_.flipAboutHorizontal())
+    image.paint()
+    image.reverseLayers()
+    image.paint()
+    image.moveLayerToTop(5)
+    image.paint()
+  }
+}
+```
+
+Once the code has been studied & the output seen modify the program following way.
+
+### 4.1
+Change size squares so they don't overlap. Dimensions layers may need to be adjusted.
+
+### 4.2
+Comment out later experiments following first `image.paint()`. Flip horizontally each even numbered layer so the following is printed:
+
+```
+                                   99999        
+                   88888           99999        
+                   88888     77777 99999        
+                   88888 666667777 99999        
+                   888855555667777 99999        
+                   88885555566744444            
+                 33333 5555566744444            
+                 33333 5555566 44444 22222      
+           11111 33333 55555   44444 22222      
+           11111 33333         44444 22222 00000
+           11111 33333               22222 00000
+           11111                     22222 00000
+           11111                           00000
+                                           00000     
+```
+
+## 5. Mask
+`Layer` class contains mask, destructive operation layer & uses another layer remove pixels from original. Program uses mask show horizontal stripes through offset squares.
+
+```
+package demo
+
+object Picture6{
+  import gfx.Layer
+  import gfx.Image
+  import gfx.Compass._
+
+  def main(args: Array[String]): Unit={
+    val layers=(0 to 9) map (i=> new Layer(40,15,(i+48).toChar,' ',N,true))
+    for(i<-0 to 9){
+      layers(i).setXY(i*3,i)
+      layers(i).filledSquare(5)
+    }
+    val image=new Image(layers(9))
+    for(i<-8 to 0 by -1){
+      image.push(layers(i))
+    }
+    image.paint()
+
+    // Create Mask
+    val mask=new Layer(40,15)
+    mask.startWriting()
+    for(i<-0 to 14 by 2){
+      mask.setXY(0,i)
+      mask.setDirection(E)
+      mask.move(40)
+    }
+
+    // Apply Mask Every Layer
+    for(i<-0 to 9){
+      layers(i).mask(mask)
+    }
+    image.paint()
+  }
+}
+```
+
+Try the following experiments:
+* Adapt the mask so it uses vertical stripes instead horizontal ones.
+* Adapt mask so it uses both vertical & horizontal stripes.
+* Apply mask only odd-numbered layers.
