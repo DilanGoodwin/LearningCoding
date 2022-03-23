@@ -424,7 +424,7 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
 ```
 
 ## Using Layer Build Image
-Purpose allowing multiple layers that image be constructed from. \one layer placed above another & where layer has empty pixel then layer below can be seen. Top moat layer considered layer 0. Provide an Image class represent collection layers. Methods provided manipulating layers.
+Purpose allowing multiple layers that image be constructed from. One layer placed above another & where layer has empty pixel then layer below can be seen. Top moat layer considered layer 0. Provide an Image class represent collection layers. Methods provided manipulating layers.
 
 ```
 package gfx

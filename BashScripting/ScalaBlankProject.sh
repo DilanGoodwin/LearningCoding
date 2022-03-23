@@ -13,6 +13,7 @@ mkdir project
 
 # Creating Files
 touch build.sbt
+touch src/README.md
 touch src/main/scala/template.scala
 touch src/test/scala/template.scala
 touch project/Dependencies.scala

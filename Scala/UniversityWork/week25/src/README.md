@@ -108,3 +108,4 @@ class ModuleTest{
 }
 ```
 
+Test gives you more clues about Module class. As you create the class the test should start to pass.
