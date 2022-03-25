@@ -413,7 +413,7 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
 
   // Mask
   def mask(other:Layer): Unit={
-    for(j<-0 to Xmax;j<-0 to Ymax){
+    for(i<-0 to Xmax;j<-0 to Ymax){
       if(other.getPixelAt(i,j).isEmpty){
         grid(i)(j)=None
       }
@@ -439,7 +439,7 @@ class Image(initLayer:Layer){
     background=bg
   }
 
-  // Return Largesr X-Dimension/Y-Dimension All Stacked Layers
+  // Return Largest X-Dimension/Y-Dimension All Stacked Layers
   def maxX: Int=layers.map(_.getXmax).max
   def maxY: Int=layers.map(_.getYmax).max
   def getNumberOfLayers: Int=Layers.length

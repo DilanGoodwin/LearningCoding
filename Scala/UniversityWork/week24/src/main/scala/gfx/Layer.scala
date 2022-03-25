@@ -132,7 +132,7 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
                 x-=1
             }
             case W => if(x>0){
-                x+=1
+                x-=1
             }
             case NW => if((y<Ymax)&&(x>0)){
                 y+=1
@@ -159,4 +159,80 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
             move()
         }
     }
+
+    // Turn Right/Left n Times
+    def turn(leftOrRight:Direction=>Direction,n:Int): Unit={
+        repeat(n){
+            turn(leftOrRight)
+        }
+    }
+
+    // Filled Square
+    def filledSquare(n:Int): Unit={
+        for(i<-n to 1 by -2){
+            square(i)
+            turn(right,1)
+            move()
+            turn(left,1)
+        }
+    }
+
+    // Square
+    def square(n:Int): Unit={
+        if(n<2){
+            move()
+        }else{
+            repeat(4){
+                move(n-1)
+                turn(right,2)
+            }
+        }
+    }
+
+    // Isosoceles Triangle Base Length n
+    def tri(n:Int): Unit={
+        move(n)
+        turn(right,3)
+        move(n/2)
+        turn(right,2)
+        move(n/2)
+        turn(right,3)
+    }
+
+    // Reflect Canvas About Imaginary Line Vertically
+    def flipAboutVertical(): Unit={
+        for(i<-0 to Xmax;j<-0 to (Ymax/2)){
+            val temp=grid(i)(j)
+            grid(i)(j)=grid(i)(Ymax-j)
+            grid(i)(Ymax-j)=temp
+        }
+    }
+
+    // Reflect Canvas Abount Imaginary Line Horizontally
+    def flipAbountHorizontal(): Unit={
+        for(j<-0 to Ymax;i<-0 to (Xmax/2)){
+            val temp=grid(i)(j)
+            grid(i)(j)=grid(Xmax-i)(j)
+            grid(Xmax-i)(j)=temp
+        }
+    }
+
+    // Shift All Pixels One Place Right
+    def shiftRight(): Unit={
+        for(j<-0 to Ymax;i<-Xmax to 1 by -1){
+            grid(i)(j)=grid(i-1)(j)
+        }
+    }
+
+    // Mask
+    def mask(other:Layer): Unit={
+        for(i<-0 to Xmax;j<-0 to Ymax){
+            if(other.getPixelAt(i,j).isEmpty){
+                grid(i)(j)=None
+            }
+        }
+    }
+
+    reset()
+
 }
