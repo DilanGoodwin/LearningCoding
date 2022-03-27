@@ -233,6 +233,99 @@ class Layer(horiz:Int,vert:Int,fg:Char,bg:Char,dir:Direction,wr:Boolean){
         }
     }
 
+    // Week 23 Edit Canvas
+    def filledRectangle(width:Int,height:Int): Unit={
+        for(x<-1 until width){
+            move(height)
+            
+            if(x%2==0){
+                turn(left,2)
+                move(1)
+                turn(left,2)
+            }else{
+                turn(right,2)
+                move(1)
+                turn(right,2)
+            }
+        }
+    }
+
+    def starShape(n:Int): Unit={
+        repeat(2){
+            move(n)
+            turn(right,5)
+            move(n)
+            turn(right,2)
+        }
+
+        turn(right,7)
+        move(n)
+        turn(right,5)
+        move(n)
+        turn(right,1)
+        move(n)
+        turn(right,6)
+        move(n)
+        turn(right,1)
+        move(n)
+        turn(right,5)
+        move(n)
+    }
+
+    def spiralShape(n:Int): Unit={
+        for(i<-1 to n){
+            repeat(i){
+                move(i)
+                turn(right,1)
+            }
+        }
+    }
+
+    def checkerBoard(): Unit={
+        for(x<-0 to 54){
+            if((x%3==0)||(x==0)){
+                setXY(x,0)
+                move(3)
+
+                for(y<-1 to 14){
+                    if(y%2!=0){
+                        // Turn Left
+                        stopWriting()
+
+                        repeat(2){
+                            turn(left,2)
+                            move(1)
+                        }
+                        startWriting()
+                    }else if(y%2==0){
+                        // Turn Right
+                        stopWriting()
+
+                        if(x==0){
+                            turn(right,2)
+                            move(1)
+                            turn(right,2)
+                        }else{
+                            repeat(2){
+                                turn(right,2)
+                                move(1)
+                            }
+                        }
+                        startWriting()
+                    }
+
+                    if(y%3==0){
+                        if(getNib=='x'){
+                            setNib('O')
+                        }else if(getNib=='O'){
+                            setNib('x')
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     reset()
 
 }

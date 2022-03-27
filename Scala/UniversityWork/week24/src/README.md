@@ -558,7 +558,300 @@ p.paint()
 Create 3rd layer call it `two`. Put something interesting on the layer, then add the layer to the top of the image stack & print it out. Try reversing the order of the layers & printing again.
 
 ## 3. Augment Layer
-Previous week you added new methods to `Canvas` library, add these methods to the `Layer` library. Then create new image with multiple layers which draw picture each layer using digit methods. Try adding, removing & changing order layers resulting image changes each time. By doing this gain experience each methods in `Image` library. 
+Previous week you added new methods to `Canvas` library, add these methods to the `Layer` library. Then create new image with multiple layers which draw picture each layer using digit methods. Try adding, removing & changing order layers resulting image changes each time. By doing this gain experience each methods in `Image` library.
+
+### Previously Added Methods
+These previously added methods need to be changed to work with the new Layer class. \n\n
+
+#### 1. EditCanvas
+
+```
+object EditCanvas{
+  import Array._
+  import Compass._
+  import Canvas._
+
+  def fillRectangle(width:Int,height:Int): Unit={
+    for(x<-1 until width){
+      move(height)
+      if(x%2==0){
+        turn(left,2)
+        move(1)
+        turn(left,2)
+      }else{
+        turn(right,2)
+        move(1)
+        turn(right,2)
+      }
+    }
+  }
+
+  def fillSquare(n:Int){
+    for(x<-1 until n){
+      move(n)
+      if(x%2==0){
+        turn(left,2)
+        move(1)
+        turn(left,2)
+      }else{
+        turn(right,2)
+        move(1)
+        turn(right,2)
+      }
+    }
+  }
+
+  def starShape(n:Int){
+    repeat(2){
+      move(n)
+      turn(right,5)
+      move(n)
+      turn(right,2)
+    }
+    
+    turn(right,7)
+    move(n)
+    turn(right,5)
+    move(n)
+    turn(right,1)
+    move(n)
+    turn(right,6)
+    move(n)
+    turn(right,1)
+    move(n)
+    turn(right,5)
+    move(n)
+  }
+
+  def spiralShape(n:Int){
+    for(i<-1 to n){
+      repeat(i){
+        move(i)
+        turn(right,1)
+      }
+    }
+  }
+
+  def checkerBoard(){
+    for(x<-0 to 54){
+      if((x%3==0)||(x==0)){
+        setXY(x,0)
+        move(3)
+        
+        for(y<-1 to 14){
+          if(y%2!=0){ // Turn Left
+            stopWriting()
+            repeat(2){
+              turn(left,2)
+              move(1)
+            }
+            startWriting()
+          }else if(y%2==0){ // Turn Right
+            stopWriting()
+            if(x==0){
+              turn(right,2)
+              move(1)
+              turn(right,2)
+            }else{
+              repeat(2){
+                turn(right,2)
+                move(1)
+              }
+            }
+            startWriting()
+          }
+          if(y%3==0){
+            if(getNib=='x'){
+              setNib('O')
+            }else if(getNib=='O'){
+              setNib('x')
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### 2. DigitCanvas
+
+```
+object DigitCanvas{
+  import Array._
+  import Compass._
+  import Canvas._
+
+  def zero(): Unit={
+    square(7)
+    turn(right,1)
+    move(7)
+  }
+
+  def one(): Unit={
+    var startPositionX: Int=getX
+    setDirection(E)
+    move(7)
+    
+    setDirection(N)
+    setX(startPositionX+3)
+    move(7)
+    turn(left,3)
+    move(2)
+  }
+
+  def two(): Unit={
+    setX(getX+7)
+    setDirection(W)
+    move(7)
+    turn(right,2)
+    move(3)
+    turn(right,2)
+    move(7)
+    turn(left,2)
+    move(3)
+    turn(left,2)
+    move(8)
+  }
+
+  def three(): Unit={
+    setDirection(E)
+    move(7)
+    turn(left,2)
+    move(3)
+    
+    var currentPosition: Int=getX
+    turn(left,2)
+    move(8)
+    turn(right,2)
+
+    setX(currentPosition)
+    move(3)
+    turn(left,2)
+    move(8)
+  }
+
+  def four(): Unit={
+    setX(getX+4)
+    move(3)
+    
+    setDirection(S)
+    move(1)
+
+    setDirection(N)
+    turn(right,2)
+    move(3)
+    turn(right,4)
+    move(7)
+    turn(right,2)
+    move(4)
+  }
+
+  def five(): Unit={
+    turn(right,2)
+    move(7)
+    turn(left,2)
+    move(3)
+    turn(left,2)
+    move(7)
+    turn(right,2)
+    move(3)
+    turn(right,2)
+    move(8)
+  }
+
+  def six(): Unit={
+    var defaultX: Int=getX
+    var defaultY: Int=getY
+
+    turn(right,2)
+    move(7)
+    turn(left,2)
+    move(3)
+    turn(left,2)
+    move(7)
+    turn(right,2)
+
+    setXY(defaultX,defaultY)
+
+    move(6)
+    turn(right,2)
+    move(7)
+  }
+
+  def seven(): Unit={
+    setY(getY+7)
+    turn(right,2)
+    move(7)
+    turn(right,3)
+    move(7)
+  }
+
+  def eight(): Unit={
+    repeat(4){
+      move(6)
+      turn(right,2)
+    }
+
+    move(3)
+    turn(right,2)
+    move(6)
+  }
+
+  def nine(): Unit={
+    setX(getX+7)
+    move(6)
+    turn(left,2)
+    move(6)
+    turn(left,2)
+    move(3)
+    turn(left,2)
+    move(6)
+  }
+}
+```
+
+#### 3. Digit2Canvas
+
+```
+object Digit2Canvas{
+  import Array._
+  import Compass._
+  import Canvas._
+  import DigitCanvas._
+
+  def matchNumbers(n:Int): Unit={
+    n match{
+      case 0 => zero()
+      case 1 => one()
+      case 2 => two()
+      case 3 => three()
+      case 4 => four()
+      case 5 => five()
+      case 6 => six()
+      case 7 => seven()
+      case 8 => eight()
+      case 9 => nine()
+    }
+  }
+
+  def number(n:Long): Unit={
+    var startX: Int=getX
+    var startY: Int=getY
+    var firstDigit: Int=0
+    var secondDigit: Int=0
+
+    firstDigit=(n%10).toInt
+    if(n>10){
+      secondDigit=((n%100)/10).toInt
+      matchNumbers(secondDigit)
+      setXY(startX+10,startY)
+      setDirection(N)
+      matchNumbers(firstDigit)
+    }
+  }
+}
+```
 
 ## 4. Picture 5
 Study following program carefully, it blends features functional programming & features object-oriented programming.
