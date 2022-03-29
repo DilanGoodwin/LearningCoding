@@ -1,56 +1,22 @@
 package cw
 
-/**
- * This class holds an instance of a simple game where
- * a player moves on a field and collects coins.
- * See the explanation sheet and comments in this file for details. The constructor builds an
- * instance of a game using the accepted parameters.
- *
- * @param wall A list of coordinates (as tuples) where walls exist. Example: The parameter List((0,0),(0,1)) puts two wall elements in the upper left corner and the position below.
- * @param coin A list of coins, each is a position and a value (i.e. a 3 value tuple). Example: List((0,0,50)) puts a coin in the upper left corner which adds 50 to the score.
- * @param initialX The initial x position of the player.
- * @param initialY The initial y position of the player. If initialX and initialY are 0, the player starts in the upper left corner.
- */
 class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, initialY: Int) {
 
-  //the current grid, a 10x10 field, where -1=empty, 0=wall, any positive number=coin
   private var field: Array[Array[Int]] = Array.ofDim[Int](10, 10)
-
-  /* Please note - to align with the overall case study (see explanation sheet), both of the above two-dimensional arrays
-   * should be accessed in the format field(col)(row) so field(2)(0) would retrieve the 3rd column and the 1st row (as indexing starts at zero),
-   * equivalent to an (x,y) coordinate of (2,0). You may therefore visualise each inner array as representing a column of data.
-   */
-
-  //the current score, initially 0
   private var score: Int = 0
-  //the current player position. As the player moves these positions update.
   private var positionX: Int = initialX
   private var positionY: Int = initialY
-  //the current X and Y save position, initially -1
   private var saveX: Int = -1
   private var saveY: Int = -1
 
-  /* This code is executed as part of the constructor. It firstly initialises all cells to -1 (i.e. empty).
-   * It uses the list of walls provided to initialise the walls in the field array by setting given coordinates to 0.
-   * It then uses the list of coins to initialise the coins in the field array by setting given coordinates to the provided number.
-   */
   for (i <- 0 until 10; k <- 0 until 10) field(i)(k) = -1
   wall.foreach(w => field(w._1)(w._2) = 0)
   coin.foreach(w => field(w._1)(w._2) = w._3)
 
-  /**
-   * Repeatedly run a sequence of commands. For example:
-   *    for(i <- 1 to 5) println("Hello")
-   * can be replaced by
-   *    rpt(5)(println("Hello"))
-   */
   def rpt(n: Int)(commands: => Unit): Unit={
     for (i <- 1 to n) { commands }
   }
-  
-  /**
-   * Utilised for GameApp.scala
-   */
+
   def printField(): Unit ={
     for(k<-0 until 10){
       for(i<-0 until 10){
@@ -70,85 +36,30 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
-/********************************************************************************
-   * COURSEWORK STARTS HERE - COMPLETE THE DEFINITIONS OF EACH OF THE OPERATIONS
-   * WE SUGGEST YOU RUN THE GameTest SUITE AFTER EVERY CHANGE YOU MAKE TO THESE
-   * SO YOU CAN SEE PROGRESS AND CHECK THAT YOU'VE NOT BROKEN ANYTHING THAT USED
-   * TO WORK.
-   *******************************************************************************/
-
-  /**
-   * Returns the current position of the player as a tuple, in (x,y) order.
-   */
   def getPlayerPos(): (Int, Int) = {
     return (0, 0);
   }
 
-  /**
-   * Returns the current score.
-   */
   def getScore(): Int = 0
 
-  /**
-   * Move the player one place to the left.
-   * If there is a wall or the field ends, nothing happens.
-   * If there is a coin, it is collected (i.e. a call to checkCoin() is made).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveLeft() {
   }
 
-  /**
-   * Move the player one place to the right.
-   * If there is a wall or the field ends, nothing happens.
-   * If there is a coin, it is collected (i.e. a call to checkCoin() is made).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveRight() {
   }
 
-  /**
-   * Move the player one place up.
-   * If there is a wall or the field ends, nothing happens.
-   * If there is a coin, it is collected (i.e. a call to checkCoin() is made).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveUp() {
   }
 
-  /**
-   * Move the player one place down.
-   * If there is a wall or the field ends, nothing happens.
-   * If there is a coin, it is collected (i.e. a call to checkCoin() is made).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveDown() {
   }
 
-  /**
-   * Move the player n places to the left. Negative numbers or 0 as a parameter cause no effect.
-   * If there is a wall or the field ends, the player stops before the wall or end of the field.
-   * Any coins are collected (i.e. a call to checkCoin() is made after each move).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveLeft(n: Int) {
   }
 
-  /**
-   * Move the player n places to the right. Negative numbers or 0 as a parameter cause no effect.
-   * If there is a wall or the field ends, the player stops before the wall or end of the field.
-   * Any coins are collected (i.e. a call to checkCoin() is made after each move).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveRight(n: Int) {
   }
 
-  /**
-   * Move the player n places up. Negative numbers or 0 as a parameter cause no effect.
-   * If there is a wall or the field ends, the player stops before the wall or end of the field.
-   * Any coins are collected (i.e. a call to checkCoin() is made after each move).
-   * A more advanced requirement would be to call checkCoins() if completed.
-   */
   def moveUp(n: Int) {
   }
 
