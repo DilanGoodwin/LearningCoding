@@ -36,34 +36,90 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
-  def getPlayerPos(): (Int, Int) = {
-    return (0, 0);
+  def getPlayerPos(): (Int,Int)={
+    return(positionX,positionY)
   }
 
-  def getScore(): Int = 0
+  def getScore(): Int = score
 
-  def moveLeft() {
+  def moveLeft(): Unit={
+    if(positionX!=0){
+      if(field(positionX-1)(positionY)!=0){
+        positionX-=1
+        checkCoin()
+      }
+    }
   }
 
-  def moveRight() {
+  def moveRight(): Unit={
+    if(positionX!=9){
+      if(field(positionX+1)(positionY)!=0){
+        positionX+=1
+        checkCoin()
+      }
+    }
   }
 
-  def moveUp() {
+  def moveUp(): Unit={
+    if(positionY!=0){
+      if(field(positionX)(positionY-1)!=0){
+        positionY-=1
+        checkCoin()
+      }
+    }
   }
 
-  def moveDown() {
+  def moveDown(): Unit={
+    if(positionY!=9){
+      if(field(positionX)(positionY+1)!=0){
+        positionY+=1
+        checkCoin()
+      }
+    }
   }
 
-  def moveLeft(n: Int) {
+  def moveLeft(n: Int): Unit={
+    for(x<-0 to n){
+      if(positionX!=0){
+        if(field(positionX-1)(positionY)!=0){
+          positionX-=1
+          checkCoin()
+        }
+      }
+    }
   }
 
-  def moveRight(n: Int) {
+  def moveRight(n: Int): Unit={
+    for(x<-0 to n){
+      if(positionX!=9){
+        if(field(positionX+1)(positionY)!=0){
+          positionX+=1
+          checkCoin()
+        }
+      }
+    }
   }
 
-  def moveUp(n: Int) {
+  def moveUp(n: Int): Unit={
+    for(x<-0 to n){
+      if(positionY!=0){
+        if(field(positionX)(positionY-1)!=0){
+          positionY-=1
+          checkCoin()
+        }
+      }
+    }
   }
 
-  def moveDown(n: Int) {
+  def moveDown(n: Int): Unit={
+    for(x<-0 to n){
+      if(positionY!=9){
+        if(field(positionX)(positionY+1)!=0){
+          positionY+=1
+          checkCoin()
+        }
+      }
+    }
   }
 
   def checkCoin() {
@@ -100,16 +156,13 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
 }
 
 object GameBuilder {
-
   def initialiseGame1(): Game = {
     return new Game(List((3, 0), (3, 1), (3, 2)), List((4, 1, 100), (3, 3, 250)), 0, 0)
   }
-
   def initialiseGame2(): Game = {
-    return new Game(List(), List(), 0, 0)
+    return new Game(List((3,3),(3,4),(3,5),(5,3),(5,4),(5,5)), List((4,4,200),(6,3,200)), 3, 2)
   }
-
   def initialiseGame3(): Game = {
-    return new Game(List(), List(), 0, 0)
+    return new Game(List((3,0),(3,1),(3,2)), List((4,1,300),(3,3,150)), 4, 1)
   }
 }
