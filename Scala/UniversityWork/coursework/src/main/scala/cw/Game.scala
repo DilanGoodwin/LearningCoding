@@ -29,7 +29,7 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
         }else if(field(i)(k)== -1){
           print(".")
         }else{
-          print(field(i)(k))
+          print("c")
         }
       }
       println()
@@ -47,6 +47,7 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       if(field(positionX-1)(positionY)!=0){
         positionX-=1
         checkCoin()
+        checkCoins()
       }
     }
   }
@@ -56,6 +57,7 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       if(field(positionX+1)(positionY)!=0){
         positionX+=1
         checkCoin()
+        checkCoins()
       }
     }
   }
@@ -65,6 +67,7 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       if(field(positionX)(positionY-1)!=0){
         positionY-=1
         checkCoin()
+        checkCoins()
       }
     }
   }
@@ -74,63 +77,121 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       if(field(positionX)(positionY+1)!=0){
         positionY+=1
         checkCoin()
+        checkCoins()
       }
     }
   }
 
   def moveLeft(n: Int): Unit={
-    for(x<-0 to n){
+    for(x<-1 to n){
       if(positionX!=0){
         if(field(positionX-1)(positionY)!=0){
           positionX-=1
           checkCoin()
+          checkCoins()
         }
       }
     }
   }
 
   def moveRight(n: Int): Unit={
-    for(x<-0 to n){
+    for(x<-1 to n){
       if(positionX!=9){
         if(field(positionX+1)(positionY)!=0){
           positionX+=1
           checkCoin()
+          checkCoins()
         }
       }
     }
   }
 
   def moveUp(n: Int): Unit={
-    for(x<-0 to n){
+    for(x<-1 to n){
       if(positionY!=0){
         if(field(positionX)(positionY-1)!=0){
           positionY-=1
           checkCoin()
+          checkCoins()
         }
       }
     }
   }
 
   def moveDown(n: Int): Unit={
-    for(x<-0 to n){
+    for(x<-1 to n){
       if(positionY!=9){
         if(field(positionX)(positionY+1)!=0){
           positionY+=1
           checkCoin()
+          checkCoins()
         }
       }
     }
   }
 
-  def checkCoin() {
+  def checkCoin(): Unit={
+    if(field(positionX)(positionY)>0){
+      score+=field(positionX)(positionY)
+      field(positionX)(positionY)= -1
+    }
   }
 
-  def move(s: String) {
+  def move(s: String): Unit={
+    for(x<-1 to s.length){
+      s.substring(x-1,x) match{
+        case "w" => moveUp()
+        case "s" => moveDown()
+        case "a" => moveLeft()
+        case "d" => moveRight()
+        case _ => None
+      }
+    }
   }
 
-  def maxScore(): Int = 0
+  def maxScore(): Int={
+    var tmpScore: Int=score
+    for(y<-0 until 10){
+      for(x<-0 until 10){
+        if(field(x)(y)>0){
+          tmpScore+=field(x)(y)
+        }
+      }
+    }
+    return tmpScore
+  }
 
-  def checkCoins() {
+  def checkCoins(): Unit={
+    var movedX: Int=0
+    var movedY: Int=0
+
+    if((saveX!= -1)&&(saveY!= -1)){
+      if(saveX<positionX){
+        movedX=1+(positionX-saveX)
+      }else if(saveX>positionX){
+        movedX=1+(saveX-positionX)
+      }
+      if(saveY<positionY){
+        movedY=1+(positionY-saveY)
+      }else if(saveY>positionY){
+        movedY=1+(saveY-positionY)
+      }
+
+      if((movedX*movedY)>9){
+        println("Started Coin Collection")
+        for(y<-saveY to positionY){
+          for(x<-saveX to positionX){
+            if(field(x)(y)>0){
+              score+=field(x)(y)
+              field(x)(y)= -1
+            }
+          }
+        }
+        saveX= -1
+        saveY= -1
+      }
+
+    }
   }
 
   def suggestSolution(): String = ""
