@@ -6,7 +6,7 @@ object GameApp {
   def main(args: Array[String]): Unit = {
     var input:String=""
     var round:Int=1
-    var game:Game=GameBuilder.initialiseGame2()
+    var game:Game=GameBuilder.initialiseGame1()
     while(!input.equals("q")){
       println("You are in round "+ round+" and your score is "+game.getScore())
       println("You could get up to "+game.maxScore()+" score");

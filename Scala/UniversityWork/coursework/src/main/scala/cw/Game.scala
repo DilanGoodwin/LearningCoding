@@ -194,7 +194,9 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
-  def suggestSolution(): String = ""
+  def suggestSolution(): String={
+    return ""
+  }
 
   def suggestMove(x: Int, y: Int): String = {
     return ""
