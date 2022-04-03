@@ -195,6 +195,13 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
   }
 
   def suggestSolution(): String={
+    var playerPositionX: Int=positionX
+    var playerPositionY: Int=positionY
+
+    // Needs to find the positions of all the coins within the current map
+    // Needs to work out how to get to each coin 
+    // Returns the moves required to get to each of the coins
+
     return ""
   }
 
