@@ -84,25 +84,13 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
 
   def moveLeft(n: Int): Unit={
     for(x<-1 to n){
-      if(positionX!=0){
-        if(field(positionX-1)(positionY)!=0){
-          positionX-=1
-          checkCoin()
-          checkCoins()
-        }
-      }
+      moveLeft()
     }
   }
 
   def moveRight(n: Int): Unit={
     for(x<-1 to n){
-      if(positionX!=9){
-        if(field(positionX+1)(positionY)!=0){
-          positionX+=1
-          checkCoin()
-          checkCoins()
-        }
-      }
+      moveRight()
     }
   }
 
