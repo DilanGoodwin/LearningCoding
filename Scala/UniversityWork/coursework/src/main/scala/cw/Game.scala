@@ -36,52 +36,52 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
-  def getPlayerPos(): (Int,Int)={
-    return(positionX,positionY)
-  }
+  def getPlayerPos(): (Int,Int)=(positionX,positionY) // Returns the players current position on the gameboard
+  def getScore(): Int=score // Returns the current score of the player
 
-  def getScore(): Int = score
+  //START
 
+  /**
+    * The following functions all have the same notes attached to them
+    * moveLeft(), moveRight(), moveUp(), moveDown()
+    * Checks that the player is not currently at the edge of the gameboard 
+    * Also checks that there is not a wall where the player would like to move to on the gameboard 
+    * If both checks clear then the player is moved & `checkCoin()` is run
+    */
   def moveLeft(): Unit={
-    if(positionX!=0){
-      if(field(positionX-1)(positionY)!=0){
-        positionX-=1
-        checkCoin()
-        checkCoins()
-      }
+    if((positionX!=0)&&(field(positionX-1)(positionY)!=0)){
+      positionX-=1
+      checkCoin()
     }
   }
 
   def moveRight(): Unit={
-    if(positionX!=9){
-      if(field(positionX+1)(positionY)!=0){
-        positionX+=1
-        checkCoin()
-        checkCoins()
-      }
+    if((positionX!=9)&&(field(positionX+1)(positionY)!=0)){
+      positionX+=1
+      checkCoin()
     }
   }
 
   def moveUp(): Unit={
-    if(positionY!=0){
-      if(field(positionX)(positionY-1)!=0){
-        positionY-=1
-        checkCoin()
-        checkCoins()
-      }
+    if((positionY!=0)&&(field(positionX)(positionY-1)!=0)){
+      positionY-=1
+      checkCoin()
     }
   }
 
   def moveDown(): Unit={
-    if(positionY!=9){
-      if(field(positionX)(positionY+1)!=0){
-        positionY+=1
-        checkCoin()
-        checkCoins()
-      }
+    if((positionY!=9)&&(field(positionX)(positionY+1)!=0)){
+      positionY+=1
+      checkCoin()
     }
   }
 
+  /**
+    * The following functions all have the same notes attached to them
+    * moveLeft(n:Int), moveRight(n:Int), moveUp(n:Int), moveDown(n:Int)
+    * Creates a loop for a number provided by the user for which to move in a given direction
+    * As all the checks are done in the functions called there is not need to extra checks within the functions calling them
+    */
   def moveLeft(n: Int): Unit={
     for(x<-1 to n){
       moveLeft()
@@ -96,35 +96,39 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
 
   def moveUp(n: Int): Unit={
     for(x<-1 to n){
-      if(positionY!=0){
-        if(field(positionX)(positionY-1)!=0){
-          positionY-=1
-          checkCoin()
-          checkCoins()
-        }
-      }
+      moveUp()
     }
   }
 
   def moveDown(n: Int): Unit={
     for(x<-1 to n){
-      if(positionY!=9){
-        if(field(positionX)(positionY+1)!=0){
-          positionY+=1
-          checkCoin()
-          checkCoins()
-        }
-      }
+      moveDown()
     }
   }
 
+  /**
+    * checkCoin()
+    * Checks to see if the players current position on the field is a coin
+    * It does this by checking the value stored in that fields position
+    * Ifthe value is greater than 0 then there is a coin there
+    * The coins value is then added to score & the value of the field position set to -1
+    * Field position is reset to stop the player from being able to collect the same coin over & over again
+    */
   def checkCoin(): Unit={
     if(field(positionX)(positionY)>0){
       score+=field(positionX)(positionY)
       field(positionX)(positionY)= -1
     }
+    checkCoins()
   }
 
+  /**
+    * move(s:String)
+    * Takes a string inputted by the user
+    * Then creates a for loop for the length of the string
+    * Takes a string character from the string at a time 
+    * Runs a match statement against the character, running the corressponding movement 
+    */
   def move(s: String): Unit={
     for(x<-1 to s.length){
       s.substring(x-1,x) match{
@@ -137,18 +141,25 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
+  /**
+    * maxScore()
+    * Goes through all the fields on the gameboard, checking value greater than 1
+    * If value is greater than 1 it adds that value to tmpScore
+    * tmpScore is returned at the end of its operation
+    */
   def maxScore(): Int={
     var tmpScore: Int=score
-    for(y<-0 until 10){
-      for(x<-0 until 10){
-        if(field(x)(y)>0){
-          tmpScore+=field(x)(y)
-        }
+    for(y<-0 until 10;x<-0 until 10){
+      if(field(x)(y)>0){
+        tmpScore+=field(x)(y)
       }
     }
     return tmpScore
   }
 
+  /**
+    * checkCoins()
+    */
   def checkCoins(): Unit={
     var movedX: Int=0
     var movedY: Int=0
@@ -166,7 +177,6 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       }
 
       if((movedX*movedY)>9){
-        println("Started Coin Collection")
         for(y<-saveY to positionY){
           for(x<-saveX to positionX){
             if(field(x)(y)>0){
@@ -182,6 +192,9 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
+  /**
+    * 
+    */
   def suggestSolution(): String={
     var playerPositionX: Int=positionX
     var playerPositionY: Int=positionY
@@ -193,9 +206,20 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     return ""
   }
 
-  def suggestMove(x: Int, y: Int): String = {
-    return ""
+  /**
+    * 
+    */
+  def suggestMove(x: Int, y: Int): String={
+    var suggestedMove: String=""
+    
+    if(((x>(field.length-1))||(y>field.length-1))||(field(x)(y)==0)){
+      return suggestedMove
+    }else{
+      return suggestedMove
+    }
   }
+
+// END
 
   def save(): Unit = {
     saveX = positionX
