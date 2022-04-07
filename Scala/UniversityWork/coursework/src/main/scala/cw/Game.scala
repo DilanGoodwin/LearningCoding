@@ -36,10 +36,10 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
   }
 
+  //START
+
   def getPlayerPos(): (Int,Int)=(positionX,positionY) // Returns the players current position on the gameboard
   def getScore(): Int=score // Returns the current score of the player
-
-  //START
 
   /**
     * The following functions all have the same notes attached to them
@@ -211,12 +211,75 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     */
   def suggestMove(x: Int, y: Int): String={
     var suggestedMove: String=""
-    
-    if(((x>(field.length-1))||(y>field.length-1))||(field(x)(y)==0)){
+    var startX: Int=positionX
+    var startY: Int=positionY
+
+    def moveOnXAxis(): Unit={
+      while(x!=startX){
+        if(x>startX){
+          startX+=1
+          suggestedMove+="d"
+        }else if(x<startX){
+          startX-=1
+          suggestedMove+="a"
+        }
+      }
+    }
+    def moveOnYAxis(): Unit={
+      while(y!=startY){
+        if(y>startY){
+          startY+=1
+          suggestedMove+="s"
+        }else if(y<startY){
+          startY-=1
+          suggestedMove+="w"
+        }
+      }
+    }
+
+    if((x>(field.length-1))||(y>(field.length-1))||(field(x)(y)==0)){
       return suggestedMove
     }else{
+      if(((startX!=0)&&(startY!=0))&&((field(startX)(startY-1)==0)||(field(startX)(startY+1)==0))){
+        moveOnXAxis()
+        moveOnYAxis()
+      }else{
+        moveOnYAxis()
+        moveOnXAxis()
+      }
+    }
+
+    // Check that the move works
+
+    startX=positionX
+    startY=positionY
+
+    for(x<-1 to suggestedMove.length){
+      suggestedMove.substring(x-1,x) match{
+        case "w" => if(field(startX)(startY-1)!=0) startY-=1
+        case "s" => if(field(startX)(startY+1)!=0) startY+=1
+        case "a" => if(field(startX-1)(startY)!=0) startX-=1
+        case "d" => if(field(startX+1)(startY)!=0) startX+=1
+        case _ => None
+      }
+    }
+    if((startX==x)&&(startY==y)){
+      return suggestedMove
+    }else{
+      suggestedMove=""
       return suggestedMove
     }
+
+    /*
+    startX=positionX
+    startY=positionY
+    move(suggestedMove)
+    if(field(positionX)(positionY)!=field(x)(y)){
+      suggestedMove=""
+    }
+    positionX=startX
+    positionY=startY
+    */
   }
 
 // END
