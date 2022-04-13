@@ -159,6 +159,9 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
 
   /**
     * checkCoins()
+    * Makes sure that the rectangle drawn is above max
+    * Runs through all of the positions within rectangle for coins
+    * Adds coins to score 
     */
   def checkCoins(): Unit={
     var movedX: Int=0
@@ -177,12 +180,10 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       }
 
       if((movedX*movedY)>9){
-        for(y<-saveY to positionY){
-          for(x<-saveX to positionX){
-            if(field(x)(y)>0){
-              score+=field(x)(y)
-              field(x)(y)= -1
-            }
+        for(y<-saveY to positionY;x<-saveX to positionX){
+          if(field(x)(y)>0){
+            score+=field(x)(y)
+            field(x)(y)= -1
           }
         }
         saveX= -1
@@ -193,21 +194,40 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
   }
 
   /**
+    * suggestSolution()
     * 
     */
   def suggestSolution(): String={
-    var playerPositionX: Int=positionX
-    var playerPositionY: Int=positionY
+    var suggestSolution: String=""
+    var foundCoin: Boolean=false
+    var coinPositionX: Int=0
+    var coinPositionY: Int=0
+    var numbCoins: Int=0
 
-    // Needs to find the positions of all the coins within the current map
-    // Needs to work out how to get to each coin 
-    // Returns the moves required to get to each of the coins
+    for(y<-0 until field.length;x<-0 until field.length){
+      if(field(x)(y)>0){
+        numbCoins+=1
+      }
+    }
 
-    return ""
+    for(i<-1 to numbCoins){
+      while(foundCoin==false){
+        if(field(coinPositionX)(coinPositionY)>0){
+          foundCoin=true
+        }
+        coinPositionX+=1
+        coinPositionY+=1
+      }
+      suggestSolution+=suggestMove(coinPositionX,coinPositionY)
+      foundCoin=false 
+    }
+    
+
+    return suggestSolution
   }
 
   /**
-    * 
+    * suggestMove(x:Int,y:Int)
     */
   def suggestMove(x: Int, y: Int): String={
     var suggestedMove: String=""
@@ -240,7 +260,7 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     if((x>(field.length-1))||(y>(field.length-1))||(field(x)(y)==0)){
       return suggestedMove
     }else{
-      if(((startX!=0)&&(startY!=0))&&((field(startX)(startY-1)==0)||(field(startX)(startY+1)==0))){
+      if((startY!=0)&&((field(startX)(startY-1)==0)||(field(startX)(startY+1)==0)||(startX==0))){
         moveOnXAxis()
         moveOnYAxis()
       }else{
@@ -250,7 +270,6 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
     }
 
     // Check that the move works
-
     startX=positionX
     startY=positionY
 
@@ -269,17 +288,6 @@ class Game(wall: List[(Int, Int)], coin: List[(Int, Int, Int)], initialX: Int, i
       suggestedMove=""
       return suggestedMove
     }
-
-    /*
-    startX=positionX
-    startY=positionY
-    move(suggestedMove)
-    if(field(positionX)(positionY)!=field(x)(y)){
-      suggestedMove=""
-    }
-    positionX=startX
-    positionY=startY
-    */
   }
 
 // END

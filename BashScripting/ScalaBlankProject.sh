@@ -25,3 +25,4 @@ echo "libraryDependencies += \"junit\" % \"junit\" % \"4.13.2\" \nlibraryDepende
 echo "import sbt._\n\nobject Dependencies {\n  lazy val scalaTest = \"org.scalatest\" %% \"scalatest\" % \"3.2.9\"\n}" >> project/Dependencies.scala
 echo "sbt.version=1.6.2" >> project/build.properties
 echo "object template{\n  def main(args:Array[String]): Unit={\n    println(\"Hello World\")\n  }\n}" >> src/main/scala/template.scala
+echo "import org.junit.Test\nimport org.junit.Assert._\n\nclass Test{\n\t\n}" >> src/test/scala/template.scala

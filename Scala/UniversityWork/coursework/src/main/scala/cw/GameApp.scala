@@ -7,6 +7,9 @@ object GameApp {
     var input:String=""
     var round:Int=1
     var game:Game=GameBuilder.initialiseGame1()
+
+    if(game.suggestSolution()=="") println("\nNothing\n") else println("\n"+game.suggestSolution()+"\n")
+
     while(!input.equals("q")){
       println("You are in round "+ round+" and your score is "+game.getScore())
       println("You could get up to "+game.maxScore()+" score");
