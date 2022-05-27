@@ -15,3 +15,7 @@ class WorkingWithLists {
         assertEquals("Random List",randList(randList.length-1),Lists.getLast(randList))
     }
 }
+
+class Arithmetic{
+    
+}
