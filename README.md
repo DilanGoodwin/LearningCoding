@@ -18,6 +18,6 @@ Early on in the creation of this Git Repo there was no structre to my commit mes
 Example `git commit -m"" -m""`
 
 Messages:
-* Structure - when there have been changes to the layout of files. This will include the removal and moving of files within the repo.
-* Package - when a course has been completed and the files are being added to the repo.
-* Documentation - when a files that does not contain any code & just contains information is being added to the repo.
+* Structure - When there have been changes to the layout of files. This will include the removal & moving of files within the repo.
+* Package - When a course has been completed and the files are being added to the repo.
+* Documentation - When a files that does not contain any code & just contains information is being added to the repo.

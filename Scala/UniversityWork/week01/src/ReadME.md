@@ -1,10 +1,14 @@
 # Week 1: Basic Programs & Formatting Output
 
-All programs within this section will be named after the title of their relevant section section, making it easier to locare programs later down the line. All code provided for me by the university will also be given under the relevant headers however, any changes that are made by me will only be within the programs themselves. 
-<br/><br/>
-It is recommended that you use an IDE like Eclipse when creating & running this code as it is the official Scala IDE but if you would like something like Visual Studio Code or InteliJ could be used however, later down the line some tinkering may need to be done to the development environment to make the program work.
+Learning Objectives:
+* Printing characters to terminal
+* Formatting printed characters to terminal
+* Escaping formatted keywords within printed string
+* Concatinating strings to print to terminal
+
 ## 1. Priting Output & Escape Sequences
-Simply get Scala to display something to the terminal.
+Create a new Scala program within the IDE of your choice calling it `Box.scala` and copy the code below into the editor. 
+
 ```
 object Box {
   def main(args: Array[String]): Unit = {
@@ -14,30 +18,62 @@ object Box {
   }
 }
 ```
+
+* What is the output of the code within the terminal?
+* What do you thing the `\t` is doing to the output?
+* What do you think the `\n` is doing to the output?
+
 ## 2. Line Breaks & Tabs
-List tasks to complete based previous program:
-* Replace each `print` command with `println`. What is the difference made?
-  * `print` displays whatever is within its expression without adding a new line by default. Compare this to `println` which adds a new line before displaying its information. It is my understanding that the `ln` within `println` stands for line new.
-* Change the program so output is same previous program. Do not use `print`.
-* Put `\t` between each asterisk. How do `\t` & `\n` work formatting output?
-  * `\t` adds a tab to the printed line where as the `\n` adds a new line where ever it is places within the print line
+Create a copy of your `Box.scala` calling it `Box2.scala` and complete the tasks below within the new program:
+
+* Replace the `print` statements with `println` statements. How does this affect the output?
+* Edit the code so that the result printed to the terminal is the same as `Box.scala` without using `print` statement. What did you have to change?
+* Add a `\t` between each of the asterisks in the print statements. What difference does this make to the output?
+
+Code within the `Box2.scala` should now look like the code below:
+
+```
+object Box2 {
+  def main(args: Array[String]): Unit = {
+    println("\t*\t*\t*")
+    println("\t*\t*\t*")
+    println("\t*\t*\t*")
+  }
+}
+```
 
 ## 3. Formatting Your Own Output
-Write a program that prints out a diamond shape, using asterisks, to the terminal.
+Now create your own program called `Diamond.scala` then, using what you have been shown so far, make it print out a diamond to the terminal using asterisks. Should look something like:
+
+```
+		* 
+	* 		*
+*				*
+	*		*
+		* 
+```
+
+
 
 ## 4. Handling Backslashes 
-Create a program that prints a big X to the terminal using backslashes.
-- Backslashes need to be escaped before they can be added to a print line, this can be done by using a double backslash to signal that you only one to use a single backslash like so: `\\`
+Using what has been show to you so far within the document create a program that draws an 'X' in the in the ternimal. It should look something like:
+```
+\    /
+  \/
+  /\
+/   \
+```
+Remeber that backslashes are used as escape characters so you cannot add them to a string like you normally would.
 
 ## 5. Handling Quotation Marks
-Create a program that prints the following to the screen: " needs to be printed sometimes, so we need to print ".
-* To print the previous sentance, with quotation marks, to the screen the quotation marks that you wish to display need to be escaped using a backslash, `\"`.
+Create a simple program that prints the following string to the screen: `" needs to be printed sometimes, so we need to print "`
+Remeber that backslashes can be used as escape characters.
 
 ## 6. String Concatenation
-Creare a new program & add the following lines of code:
+Copy the following lines of code into a new program & run it:
 ```
 println("Hello World!")
 println("Hello"+" "+"World!")
 ```
-Why does it look the same? What is the + operator doing?
-•••The `+` sign is concatinating the strings together. It is almost like just pushing the two different strings together to create a longer string.
+
+Both print statements should look the same but when looking at the code they are both slightly different. First print statement has no modifications applied to it but the second using string concatination to join 2 sections of a string together. In the instance above it is combining `Hello`, ` ` and `World!` together into a single string to be printed.

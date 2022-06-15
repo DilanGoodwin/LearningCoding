@@ -1,30 +1,34 @@
 # Week 2: Variables & Data Types
-All programs within this section will be named after the title of their relevant section section, making it easier to locare programs later down the line. All code provided for me by the university will also be given under the relevant headers however, any changes that are made by me will only be within the programs themselves.
+
+Learning Objectives:
+
 
 ## 1. Outputting Numbers & Chars
-As well as printing out sentances, Scala can also be used to print out characters & numbers.
+Strings are not the only data type that Scala can use, it is also able to use Integers & Chars (otherwise known as characters). Below is a simple program that demonstrates how these other data types can be implemented within Scala:
 
-### 1.1  
-Use the code below to create a program. What is the output?
-* <placeholder\>
 ```
-object PrintFavourites {
-  def main(args: Array[String]): Unit = {
-    print("My favourite whole number is: ")
-    println(20)
-    print(" and decimal number is: ")
-    println(0.5)
-    print(" and letter is: ")
-    println('t')
-  }
+object PrintFavourites{
+	def main(args: Array[String]): Unit={
+		print("My favourite whole number is: ")
+		print(20)
+		print(" and decimal number is: ")
+		print(0.5)
+		print(" and letter is: ")
+		print('t')
+	}
 }
 ```
-### 1.2
-Rewrite the program so all outputs are completed using only a single `println` statement.
+
+As you can see within the program integers that are being used do not have quotation marks around them & the chars only have single quotes around them. While you could put double quotes around both chars & integers that would change the data type that they are recognised as to string. These little things are good ways of knowing what data type items within a program are.
+
+Now using the program above as a template create a program that only uses a single `println` line to display all of the information.
+
+<-- I am here -->
 
 ## 2. Ouputting Variables
-### 2.1
-Create the program below:
+Programs are not really that useful if they are not able to store different things that we can use later, this is where variables come in. Variables are like small data stores that can store different data types. Within Scala you do not have to define the data type that a variable is specifically going to be using but it is good programming practice. 
+
+Create a new Scala program & copy the code below into the program:
 ```
 object OutputVariables {
   def main(args: Array[String]): Unit = {
@@ -37,19 +41,18 @@ object OutputVariables {
   }
 }
 ```
-The variable `option1` is reused many times to change the displayed output. Variables can be used to store different pieces of information that can then be used later on throughout the program. Within the program above the variables is inititalised using the term `var`. The variable is also given a type that it is going to store, in the code above the variable type given is `String`.
-### 2.2
-Update one of the variables within the program. Can you see a benefit to storing data within variables?
-* Storing data within variables is useful because it allows the program to remember certain pieces of information. A good example of what a variable can be used for is the storing of someones name, you do not want a fixed name within your program because there is no guarantee that the person using the program will have that name. Instead assigining the name to a variable allows only that single thing to be changed & have it chage throughout the entire program. 
+As you can see within the program code uses the `option1` variable many times while it is being executed. You can change what is being stored wihtin that variable to change the output of the different sentences that are being used. 
+The two variables in use `option1` & `option2` are both initialised using the `var` keyword & have been given the type `String` upon being initialised. 
+
+Go through the program & change one of the called upon variables from `option1` to `option2`, do you see how it can be useful to use variables?
 
 ## 3. Escape Sequences & Variables
-### 3.1 
-Create a program that outputs the following:
+To test that you have understood everything that we have gone through so far I would like you to create a program that outputs the following to the terminal:
 ```
 "Sometimes the world is a good place,
 and sometimes it is a bad place."
 ```
-Use the code fragments below to create the program:
+Use the code fragments below to complete the program:
 ```
 object OutputVariables2{
   def main(args: Array[String]): Unit={
@@ -58,11 +61,10 @@ object OutputVariables2{
   }
 }
 ```
-### 3.2
-Change the program so that the result is stored within a third variable before being printed to terminal.
+Once you have done that change the program so that the result is stored within a third variable & then printed to the terminal.
 
 ## 4. Using the Interpreter
-Open a Scala interpreter by opening a terminal & typing in scala. Then type in the following values:
+Open a Scala interpreter by opening a terminal window & typing in Scala. Once the interpreter has started type in the following values one at a time:
 ```
 5
 -5
@@ -81,14 +83,13 @@ a
 'a'
 "a"
 ```
-Look at the different types of the values, are they what you expected?
-* There are different variable types that can be used to store variables within a program, this is because the program allocates set amount of bits/bytes per variable for the information the programmer is going to store in it. For example most numbers are stored as `Int` values however there is a maximum & minimum value that can be stored as an `Int` before you would need to change the variable type to something like a `Long`. 
+The Scala interpreter can be used as a testing ground for small parts of a program. I would not recommend designing your entire program within the interpreter but if you have most of a program fleshed out & need to test a small section you could copy it into the interpreter to test it rather than running the entire program & getting it to run that specific section. 
 
-Why do some of the inputs fail?
-* Some of the inputs fail because the interpreter is expecting a given variable type but the user has entered a different variable type. The interpreter uses little hits to work out what the input should be stored as, a good example of this is when entering a string. Strings are surrounded by quotation marks `"`, this tells the interpreter to save the variable as a string.
+Looking at the different values that you have entered into the terminal you can see the different data types that they have been stored as. Are all of the values assigned to the data types that you expected or are there some that are different?
+Some of the inputs do not work within the interpreter, do you know why they do not work?
 
 ## 5. Operators in the Interpreter
-Once again open a Scala interpreter within a terminal & enter the following values:
+Going back to the interpreter session that you still have open or a new one that you have just started enter the following values:
 ```
 5 + 5
 5 + 5.5
@@ -106,11 +107,12 @@ true + 5
 3.0 / 4
 3 / 4.0
 ```
-Looks at the different variable types & the outputs from some of the values. Why do some of them fail?
-* Some of the inputs fail because they are type miss matches, this is when the variables are two different types that do not play nicely with each other. A good example of this would be `5 + 5` & `"true" + 5`. Using the example `5 + 5` both values would be stored as integer values by Scala & would be added together (as stated by the operator `+`) without issue. However in the example `"true" + 5` the value `"true"` is stored as a string where as `5` is stored as an integer preventing the two from being added together. 
+The inputs above are operator type inputs, there are mathematical operators that are having an effect on the values that are being created within the interpreter. Look at the how the data is being modified before being stored within the interpreter. Some of the inputs fail, why is this?
+If you are not able to work out why some of the inputs fail at a look at how the data types are being mismatched within the interpreter & how that could case errors when creating a new variable. 
 
 ## 6. Variables in the Interpreter
-Enter the following expressions into the Scala interpreter:
+Rather than just entering numbers into the terminal & looking at the results this time we are going to define different variables that we can then use repeatedly within the interpreter. Enter the values below one at a time but do not restart the terminal between entering the different values otherwise you will not be able to access the previously entered values:
+
 ```
 var x1: Int = 5
 var x2: Int = 5.0
@@ -129,12 +131,13 @@ var x12: Int = 2147483648
 var x13: Long = 2147483648
 var x14: Long = 2147483648L
 ```
-Explain the errors observed from these inputs.
-* Errors seem to arrise when a variable is stated to be the wrong type. An example of this is defining an `Int` but the value entered (`5.0`) is a `Double`. 
-* One of the other errors that has arrised is when a value is entered that exceeds the predefined bounds of the variable type. An example of this is assigning the number `2147483648` to the type `Int`.
+There are some errors that appear when entering these values within the interpreter. Some of these errors occur because the variable is defined as one type but the data type entered is different from the type that it was defined as. The other error that occurs is because there is a certain limit to the amount that an integer can store. The largest number that can be stored within an `int` is `2147483647` which is not that large a number when you are talking about calculating numbers that could be in the billions, which is something that computer programs are good at doing. If you need to use a number greater than that you would need to use the `long` data type which can store numbers greater than `2147483647`.
 
 ## 7. Other Variable Types in the Interpreter
-Open a new Scala interpreter & enter the following:
+We will be working within the Scala interpreter again as it is a good way to quickly check things & when errors occur they are flagged quickly which means that you can learn what things cause errors & why things cause errors.
+
+There is a list of different commands to enter into the terminal but as we are storing them as variables make sure not to restart the interpreter when working with these variables as it will reset them & you will not be able to use the variables that you have previsouly entered unless you enter them again.
+
 ```
 var x1: Char = 'a'
 var x2: String = "a"
@@ -151,12 +154,14 @@ var 10x: String = "45"
 var def: String = 45
 var object: Int = 5
 ```
-Why did some of the inputs fail?
-* Some of the provided inputs failed because of the way the variables were defined. Some words with Scala are predefined/used & are not allowed to be used as variable names. For example you could not use `var` as a variable name because it has a predefined function within Scala. 
+
+Some of the inputs once again failed, this is because some of the variable names that we wanted to use are predefined function names within Scala so they cannot be used as variable names within a program. An example of this is the `var` keyword, this tells the program that you are creating a variable so you cannot name a varaible var because it already has a predefined function.
 
 ## 8. Variables in a Scala Program
-### 8.1
-Create a new project using the code below:
+Now that we have played around with variables & understand how we can use them it is time to add them into a program. We will start off with very basic usages of varaibles & then look into more complex ways that they can be used.
+
+Copy the code below into a new Scala program:
+
 ```
 object VarX{
   def main(args: Array[String]): Unit={
@@ -165,6 +170,7 @@ object VarX{
   }
 }
 ```
+
 
 ### 8.2 
 Modify the program to print the value of the variable `x` before the prefefined `String` & change the value of the variable to be `5`. New message should be: `5 is the value of x`.

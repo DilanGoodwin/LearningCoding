@@ -24,4 +24,4 @@ do
     fi
 done
 
-echo "Completed Me"
+echo "Completed"
